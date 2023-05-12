@@ -1,0 +1,32 @@
+unit JixButton;
+
+{$mode ObjFPC}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, BCButton;
+
+type
+  TJixButton = class(TBCButton)
+  private
+
+  protected
+    OThemeName: String;
+  public
+
+  published
+
+  end;
+
+procedure Register;
+
+implementation
+
+procedure Register;
+begin
+  {$I jixbutton_icon.lrs}
+  RegisterComponents('JixUI',[TJixButton]);
+end;
+
+end.
