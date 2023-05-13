@@ -1,3 +1,11 @@
+{  $Id$  }
+{
+JGL
+|
+|- Ver: 1.1
+|- Status: Alpha
+|- Meaning: Jixoid Generic List
+}
 {$Mode ObjFPC}{$H+}
 
 Unit JGL;
