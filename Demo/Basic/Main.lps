@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Main.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="7"/>
+        <CursorPos X="5" Y="24"/>
+        <UsageCount Value="202"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unitmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitMain"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="83"/>
+        <CursorPos X="6" Y="153"/>
+        <FoldState Value=" T3iY047 Pi9iS0k"/>
+        <UsageCount Value="202"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unitback.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitBack"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\jixcomponent.pas"/>
+        <UnitName Value="JixComponent"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3"/>
+        <CursorPos X="3" Y="11"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\jixbutton.pas"/>
+        <UnitName Value="JixButton"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="11" Y="70"/>
+        <FoldState Value=" T3X062@"/>
+        <UsageCount Value="33"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JCL\FormManager.cod.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="291"/>
+        <CursorPos X="49" Y="303"/>
+        <FoldState Value=" T0109062 PIlUA T3N0b2 pkXiZ2F]9j6jf0A5 PUi40 T1D08S"/>
+        <UsageCount Value="23"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JForms.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="36" Y="7"/>
+        <UsageCount Value="63"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JDialogs.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="17" Y="6"/>
+        <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\JixTemplate\Collection.cod.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="12"/>
+        <CursorPos X="9" Y="106"/>
+        <FoldState Value=" T1G06 T3O0e013 Pcic0 T0i1E61l"/>
+        <UsageCount Value="23"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JixAPI.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <CursorPos X="7" Y="66"/>
+        <UsageCount Value="41"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\JixTemplate\JixTemplate.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="19"/>
+        <CursorPos X="17" Y="11"/>
+        <UsageCount Value="37"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JCL\FormManager.map.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="39"/>
+        <CursorPos X="29" Y="54"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JixPas.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="32" Y="7"/>
+        <FoldState Value=" TJH1;2 PmNkZ1!"/>
+        <UsageCount Value="36"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1437"/>
+        <CursorPos X="63" Y="1447"/>
+        <UsageCount Value="11"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Lazarus\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6483"/>
+        <CursorPos Y="6497"/>
+        <UsageCount Value="12"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Lazarus\fpc\3.2.2\source\rtl\objpas\classes\classesh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="78"/>
+        <CursorPos X="3" Y="91"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\JixComboBox\jixcombobox.pas"/>
+        <UnitName Value="JixComboBox"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="64"/>
+        <CursorPos X="45" Y="74"/>
+        <FoldState Value=" T3W0928"/>
+        <UsageCount Value="25"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\MiniJixoid_JCL.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="82"/>
+        <CursorPos X="29" Y="89"/>
+        <UsageCount Value="11"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\graphiccontrol1.pas"/>
+        <UnitName Value="GraphicControl1"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\JixCheckBox\jixcheckbox.pas"/>
+        <UnitName Value="JixCheckBox"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="169"/>
+        <CursorPos X="67" Y="136"/>
+        <FoldState Value=" T3jN08213 pmciJ2G6 Pi3nO0 TJlW3{A2 pj1lC3D THoee91D"/>
+        <UsageCount Value="50"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgrabitmap-master\bgrabitmap\csscolorconst.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3" Y="16"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgracontrols-master\bcbutton.pas"/>
+        <UnitName Value="BCButton"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="366"/>
+        <CursorPos X="35" Y="347"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgracontrols-master\bcbasectrls.pas"/>
+        <UnitName Value="BCBaseCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="354"/>
+        <CursorPos X="64" Y="358"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgracontrols-master\bcthememanager.pas"/>
+        <UnitName Value="BCThemeManager"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="3" Y="18"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgrabitmap-master\bgrabitmap\bgradefaultbitmap.pas"/>
+        <UnitName Value="BGRADefaultBitmap"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="413"/>
+        <CursorPos X="15" Y="421"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgrabitmap-master\bgrabitmap\geometrytypes.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="545"/>
+        <CursorPos X="3" Y="549"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgrabitmap-master\bgrabitmap\bgrapixel.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="45"/>
+        <CursorPos X="3" Y="34"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgrabitmap-master\bgrabitmap\unibitmapgeneric.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="74"/>
+        <CursorPos X="15" Y="82"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgrabitmap-master\bgrabitmap\bgrabitmaptypes.pas"/>
+        <UnitName Value="BGRABitmapTypes"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="129"/>
+        <CursorPos X="3" Y="139"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\AppData\Local\Lazarus\onlinepackagemanager\packages\bgrabitmap-master\bgrabitmap\bgragraphics.pas"/>
+        <UnitName Value="BGRAGraphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="3" Y="69"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Lazarus\lcl\graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="134"/>
+        <CursorPos X="5" Y="124"/>
+        <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5108"/>
+        <CursorPos X="51" Y="5114"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JCL\JixForm.map.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="22"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\jixradiobutton.pas"/>
+        <UnitName Value="JixRadioButton"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="154"/>
+        <CursorPos X="19" Y="161"/>
+        <FoldState Value=" T3ie0O*"/>
+        <UsageCount Value="11"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\JixTemplate\Collection.map.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="16"/>
+        <CursorPos X="67" Y="26"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JGL.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="32" Y="7"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\JixCheckBox\jixcheckbox_icon.lrs"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\JixRadioButton\jixradiobutton.pas"/>
+        <UnitName Value="JixRadioButton"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="430"/>
+        <CursorPos X="45" Y="436"/>
+        <UsageCount Value="11"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JixUI.pas"/>
+        <UnitName Value="Jixui"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="49" Y="11"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\jix2radiobutton.pas"/>
+        <UnitName Value="Jix2RadioButton"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Components\JixRadioButton\jixradiobutton_icon.lrs"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="56"/>
+        <CursorPos X="27" Y="47"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JixDialogs\UnitTextAsk.pas"/>
+        <ComponentName Value="FormTextAsk"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="47" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JixDialogs\UnitQuestAsk.pas"/>
+        <ComponentName Value="FormQuestAsk"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="72" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JixDialogs\UnitDialogTime.pas"/>
+        <ComponentName Value="FormDialogTime"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="47" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JixDialogs\UnitDialogDate.pas"/>
+        <ComponentName Value="FormDialogDate"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="59" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\JixDialogs\CustomError.pas"/>
+        <ComponentName Value="FormCustomError"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="48" Y="9"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Librarys\JixUI\Jedab.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="14" Y="11"/>
+        <UsageCount Value="10"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="18">
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="62" Column="53" TopLine="57"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="61" Column="53" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="61" Column="53" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="62" Column="53" TopLine="57"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="63" Column="53" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="64" Column="53" TopLine="59"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="65" Column="53" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="64" Column="53" TopLine="59"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="69" Column="49" TopLine="59"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="70" Column="49" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="143" Column="13" TopLine="135"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="150" Column="36" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="151" Column="10" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="152" Column="12" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="165" Column="18" TopLine="152"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="151" Column="12" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="146" Column="42" TopLine="94"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="60" Column="53" TopLine="50"/>
+      </Position>
+      <Position>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="144" Column="23" TopLine="131"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
