@@ -3,16 +3,9 @@
 JixDialogs
 |
 |- Ver: 4.0
-|- Status: Alpha, UnPublished
+|- Status: Alpha
 |- Meaning: JixUI Dialogs
 |- Using: JixUI 4.0
-|- Addictions
-|  |
-|  |- BGRAControls
-|
-|- Developing by Jixoid
-   |
-   |- Alfroce(Abdulkadir AYDIN) | Jixoid@gmail.com
 
 }
 Unit JDialogs;
