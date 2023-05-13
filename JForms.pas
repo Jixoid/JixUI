@@ -1,3 +1,11 @@
+{  $Id$  }
+{
+JForms
+|
+|- Ver: 0.4
+|- Status: Alpha
+|- Meaning: JixForm and FormManager
+}
 Unit JForms;
 
 {$Mode Delphi}{$M+}{$ModeSwitch ArrayOperators}
