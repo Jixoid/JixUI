@@ -3,17 +3,8 @@
 Jedab
 |
 |- Ver: 9.8
-|- Status: Alpha, UnPublished
+|- Status: Alpha
 |- Meaning: Jixoid Extended Database
-|- Addictions
-|  |
-|  |- BGRAControls
-|  |- JixDialogs
-|
-|- Developing by Jixoid
-   |
-   |- Alfroce(Abdulkadir AYDIN) | Jixoid@gmail.com
-
 }
 Unit Jedab;
 
