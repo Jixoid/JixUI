@@ -1,11 +1,11 @@
+{  $Id$  }
 {
-Supporting
-  -32bit
-  -64bit
-  -128bit
-  -256bit
+JixPas
+|
+|- Ver: ?
+|- Status: Alpha
+|- Meaning: Jixoid Helper Types
 }
-
 unit JixPas;
 
 {$Mode ObjFpc}{$H+}{$M+}{$ModeSwitch TypeHelpers}
@@ -79,21 +79,6 @@ Type
       Array[0..7] of Int32S;
     {$ifend}
   pInt256S = {Pointer of Int256S}^Int256S;
-
-  //Integer =
-  //  {$if     defined(CPU256)} Int256S
-  //  {$elseif defined(CPU128)} Int128S
-  //  {$elseif defined(CPU64)}  Int64S
-  //  {$else} Int32S
-  //  {$ifend};
-  //
-  SavInteger =
-    {$if     defined(CPU256)} Int128S
-    {$elseif defined(CPU128)} Int64S
-    {$elseif defined(CPU64)}  Int32S
-    {$else} Int16S
-    {$ifend};
-
 {%endregion}
   
 {%Region Colors}
@@ -164,26 +149,6 @@ Var
   Colors: jColors;
 
 {%endregion}
-
-{%Region Helper}
-{
-Type
-  hDouble = Type Helper For Double
-    Public
-      Function  Round: Int64S;
-      Function  RoundTo(Digits: TRoundToRange): Double;
-
-      Function  ToString: String;
-      Function  ToString(FormatSettings: TFormatSettings): String;
-
-      Function  isPositive: Boolean;
-      Function  isNegative: Boolean;
-
-      Function  isNil: Boolean;
-      Procedure doNil;
-  End;
-}
-{%EndRegion}
 
 Type
   mBasicProcedure = Procedure of object;
@@ -385,52 +350,6 @@ Begin
   {%endregion}
 End;
 
-{%EndRegion}
-
-{%Region Helper}
-{
-
-Function  hDouble.Round: Int64S;
-Begin
-  Result:= System.Round(Self);
-End;
-
-Function  hDouble.RoundTo(Digits: TRoundToRange): Double;
-Begin
-  Result:= Math.RoundTo(Self, Digits);
-end;
-
-Function  hDouble.ToString: String;
-Begin
-  Result:= FloatToStr(Self);
-end;
-
-Function  hDouble.ToString(FormatSettings: TFormatSettings): String;
-Begin
-  Result:= FloatToStr(Self, FormatSettings);
-end;
-
-Function  hDouble.isPositive: Boolean;
-Begin
-  Result:= (Self > 0);
-end;
-
-Function  hDouble.isNegative: Boolean;
-Begin
-  Result:= (Self < 0);
-end;
-
-Function  hDouble.isNil: Boolean;
-Begin
-  Result:= (Self = 0);
-end;
-
-Procedure hDouble.doNil;
-Begin
-  Self:= 0;
-end;
-
-}
 {%EndRegion}
 
 initialization
