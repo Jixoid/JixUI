@@ -22,7 +22,8 @@
     </CompilerOptions>
     <Description Value="JCL 0.4
 JixDialogs 4.0
-Jedab 9.8"/>
+Jedab 9.8
+JGL 1.1"/>
     <License Value="GPL licence"/>
     <Version Major="4" Minor="2" Release="1" Build="2"/>
     <Files>
