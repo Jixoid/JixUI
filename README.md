@@ -17,6 +17,7 @@ Daha yeni bir sürüm için Preview dalını kullanabilirsiniz. Ama onun orda ol
 
 Şuan daha çok yeni, hatalar var biliyorum.
 
+
 English =====>
 
 JixUI is a Lazarus package.
