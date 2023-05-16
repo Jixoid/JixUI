@@ -15,6 +15,7 @@ Basit, Bileşenin ve Şablonun ThemeName'i uyuştuğunda temayı bileşene uygul
 
 Şuan daha çok yeni, hatalar var biliyorum.
 
+
 English =====>
 
 JixUI is a Lazarus package.
