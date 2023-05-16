@@ -1,5 +1,5 @@
 # JixUI
-v4.3.2.2 -Alpha -Preview
+v4.3.2.2 -Beta -Preview
 
 Türkçe =====>
 
