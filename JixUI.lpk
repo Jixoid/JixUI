@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="JixUI"/>
+    <Type Value="RunAndDesignTime"/>
+    <AddToProjectUsesSection Value="True"/>
+    <Author Value="Alforce | Jixoid@gmail.com"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="JixDialogs;Components;Components\JixComboBox;Components\JixCheckBox;Components\JixRadioButton;Components\JixButton;Components\JixPanel;Components\JixPanelEx;Components\JixProgressBar;Components\JixPaintBox;Components\JixProgressBarEx;Components\JixPaintBoxWin"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="JCL 0.6
+JixDialogs 4.0
+Jedab 9.8
+JGL 1.1"/>
+    <License Value="GPL licence"/>
+    <Version Major="4" Minor="3" Release="2" Build="2"/>
+    <Files>
+      <Item>
+        <Filename Value="JForms.pas"/>
+        <UnitName Value="JForms"/>
+      </Item>
+      <Item>
+        <Filename Value="JixPas.pas"/>
+        <UnitName Value="JixPas"/>
+      </Item>
+      <Item>
+        <Filename Value="JGL.pas"/>
+        <UnitName Value="JGL"/>
+      </Item>
+      <Item>
+        <Filename Value="Jedab.pas"/>
+        <UnitName Value="Jedab"/>
+      </Item>
+      <Item>
+        <Filename Value="JDialogs.pas"/>
+        <UnitName Value="JDialogs"/>
+      </Item>
+      <Item>
+        <Filename Value="jixcomponent.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixComponent"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixButton\jixbutton.pas"/>
+        <HasRegisterProc Value="True"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="JixButton"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixComboBox\jixcombobox.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixComboBox"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixCheckBox\jixcheckbox.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixCheckBox"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixRadioButton\jixradiobutton.pas"/>
+        <HasRegisterProc Value="True"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="JixRadioButton"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixPanel\jixpanel.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixPanel"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixPanelEx\jixpanelex.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixPanelEx"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixProgressBar\jixprogressbar.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixProgressBar"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixProgressBarEx\jixprogressbarex.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixProgressBarEx"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixPaintBox\jixpaintbox.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixPaintBox"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixPaintBoxWin\jixpaintboxwin.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixPaintBoxWin"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\portableform.pas"/>
+        <HasRegisterProc Value="True"/>
+        <AddToUsesPkgSection Value="False"/>
+        <UnitName Value="PortableForm"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\portablejixform.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="PortableJixForm"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="bgracontrols"/>
+      </Item>
+      <Item>
+        <PackageName Value="BGRABitmapPack"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCLBase"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
