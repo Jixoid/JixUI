@@ -16,6 +16,7 @@ Basit, Bileşenin ve Şablonun ThemeName'i uyuştuğunda temayı bileşene uygul
 Daha yeni bir sürüm için Preview dalını kullanabilirsiniz. Ama onun orda olmasında bir neden vardır.
 
 Şuan daha çok yeni, hatalar var biliyorum.
+Güncellemeler gelicektir hataları bildirirseniz seviniriz.
 
 
 English =====>
@@ -33,3 +34,4 @@ It's simple, when the ThemeName of the Component and Template match, it applies 
 You can use the Preview branch for a newer version. However, there is a reason behind its existence.
 
 I'm still fairly new and I know there are errors.
+Updates will come, we will be glad if you report bugs.
