@@ -19,6 +19,50 @@ Begin
   end;
 End;
 
+Procedure TAdd.Table(var Select: TDB; X,Y: Integer);
+Var
+  i: Integer;
+Begin
+  try
+    AddLog('Add: Table [Status: Starting]');
+
+    SetLength(
+      Select.Tables,
+      Length(Select.Tables)+1
+    );
+
+    AddLog('Add: Table [Status: Added]');
+
+    try
+      AddLog('Resize: DB [Status: Starting, X: '+X.ToString+', Y: '+Y.ToString+']');
+
+      Select.Tables[High(Select.Tables)].X:= X;
+      Select.Tables[High(Select.Tables)].Y:= Y;
+
+      SetLength(Select.Tables[High(Select.Tables)].Rows, Y);
+
+      For i:= 0 to High(Select.Tables[High(Select.Tables)].Rows) do
+        SetLength(Select.Tables[High(Select.Tables)].Rows[i].Cells, X);
+
+      AddLog('Resize: DB [Status: Added, X: '+X.ToString+', Y: '+Y.ToString+']');
+    except
+      AddLog('Resize: DB [Status: Error, X: '+X.ToString+', Y: '+Y.ToString+']', TLogFlag.jlfError);
+      CustomErrorSend(
+        'Oops, Error encountered in Jedab',
+        'This can help you'+#13+'Jedab Logs:'+#13+Upper.Log_Text,
+        CustomErrorFlag.Close_Halt
+      );
+    end;
+  except
+    AddLog('Add: Table [Status: Error]', TLogFlag.jlfError);
+    CustomErrorSend(
+      'Oops, Error encountered in Jedab',
+      'This can help you'+#13+'Jedab Logs:'+#13+Upper.Log_Text,
+      CustomErrorFlag.Close_Halt
+    );
+  end;
+End;
+
 Procedure TAdd.Row(var Select: TDB; TableID: Integer);
 Begin
   try
