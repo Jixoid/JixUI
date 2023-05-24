@@ -15,12 +15,12 @@ Type
 
   {%Region JixComponent Interface}
   iJixComponent = Interface
-      Procedure SetTemplate(Temp: jTemplateCollectionItem);
+    Procedure SetTemplate(Temp: jTemplateCollectionItem);
 
-      Procedure SetThemeName(Value: String); Inline;
-      Function GetThemeName: String; Inline;
+    Procedure SetThemeName(Value: String); Inline;
+    Function GetThemeName: String; Inline;
 
-      Property ThemeName: String   Read GetThemeName Write SetThemeName;
+    Property ThemeName: String   Read GetThemeName Write SetThemeName;
   End;
   {%EndRegion}
 
@@ -196,7 +196,7 @@ Type
       Property PaddingTop: Int16S    Read FPadT       Write SetPadT       Default 0;
       Property PaddingRight: Int16S  Read FPadR       Write SetPadR       Default 0;
       Property PaddingBottom: Int16S Read FPadB       Write SetPadB       Default 0;
-      Property SingleLine: Boolean   Read FSingleLine Write SetSingleLine Default True;
+      Property SingleLine: Boolean   Read FSingleLine Write SetSingleLine Default False;
       Property Style: TFontStyles    Read FStyle      Write SetStyle      Default [];
       Property WordBreak: Boolean    Read FWordBreak  Write SetWordBreak  Default False;
 
@@ -284,6 +284,9 @@ Type
       Var Bmp: TBGRABitmap;
       Var ToolTipWindow: THintWindow;
 
+      Var UseCustomRect: Boolean;
+      Var ScreenRect: TRect;
+
       Procedure StateChanged({%H-}ASender: TObject); Virtual;
 
       Procedure Paint; Override;
@@ -352,6 +355,9 @@ Type
       Var NowState: jJixState;
       Var Bmp: TBGRABitmap;
       Var ToolTipWindow: THintWindow;
+
+      Var UseCustomRect: Boolean;
+      Var ScreenRect: TRect;
 
       Procedure StateChanged({%H-}ASender: TObject); Virtual;
 
@@ -426,6 +432,10 @@ Constructor TJixControl.Create(Aowner: Tcomponent);
 Begin
   Inherited;
 
+  UseCustomRect:= False;
+
+  ControlStyle:= ControlStyle +[csParentBackground];
+
   StateNormal:= jJixState.Create;
   StateHover:= jJixState.Create;
   StateClick:= jJixState.Create;
@@ -477,6 +487,14 @@ Var
   g: TBGRAMultiGradient;
   gs: TBGRAGradientScanner;
 Begin
+  if not UseCustomRect then
+  Begin
+    ScreenRect.Left:= 0;
+    ScreenRect.Top:= 0;
+    ScreenRect.Width:= Width;
+    ScreenRect.Height:= Height;
+  End;
+
   if not(Visible or (csDesigning in ComponentState)) then Exit;
 
   Canvas.Changing;
@@ -489,7 +507,9 @@ Begin
     jbgsColor:
       Begin
         Bmp.FillRoundRectAntialias(
-          0, 0, Width-1, Height-1,
+          ScreenRect.Left, ScreenRect.Top,
+          ScreenRect.Right-1, ScreenRect.Bottom-1,
+
           NowState.Rounding.RoundX, NowState.Rounding.RoundY,
           AddAlpha(NowState.Background.Color ,NowState.Background.Opacity),
           NowState.Rounding.Options
@@ -517,18 +537,20 @@ Begin
           g,
           NowState.Background.GradientType,
           PointF(
-            NowState.Background.Point1.XPercent/100*Width,
-            NowState.Background.Point1.YPercent/100*Height
+            NowState.Background.Point1.XPercent/100*ScreenRect.Width,
+            NowState.Background.Point1.YPercent/100*ScreenRect.Height
           ),
           PointF(
-            NowState.Background.Point2.XPercent/100*Width,
-            NowState.Background.Point2.YPercent/100*Height
+            NowState.Background.Point2.XPercent/100*ScreenRect.Width,
+            NowState.Background.Point2.YPercent/100*ScreenRect.Height
           )
         );
         gs.Sinus:= NowState.Background.Sinus;
 
         Bmp.FillRoundRectAntialias(
-          0, 0, Width-1, Height-1,
+          ScreenRect.Left, ScreenRect.Top,
+          ScreenRect.Right-1, ScreenRect.Bottom-1,
+
           NowState.Rounding.RoundX, NowState.Rounding.RoundY,
           gs, NowState.Rounding.Options
         );
@@ -542,7 +564,9 @@ Begin
   if NowState.Border.Style = jbsSolid then
   Begin
     Bmp.RoundRectAntialias(
-      0, 0, Width-1, Height-1,
+      ScreenRect.Left, ScreenRect.Top,
+      ScreenRect.Right-1, ScreenRect.Bottom-1,
+
       NowState.Rounding.RoundX, NowState.Rounding.RoundY,
       AddAlpha(
         NowState.Border.ExColor,
@@ -568,10 +592,10 @@ Begin
 
   Bmp.TextRect(
     Classes.Rect(
-      NowState.FontEx.PaddingLeft,
-      NowState.FontEx.PaddingTop,
-      Width  -NowState.FontEx.PaddingRight,
-      Height -NowState.FontEx.PaddingBottom
+      ScreenRect.Left +NowState.FontEx.PaddingLeft,
+      ScreenRect.Top  +NowState.FontEx.PaddingTop,
+      ScreenRect.Right  -NowState.FontEx.PaddingRight,
+      ScreenRect.Bottom -NowState.FontEx.PaddingBottom
     ),
     NowState.FontEx.PaddingLeft,
     NowState.FontEx.PaddingTop,
@@ -832,6 +856,10 @@ Constructor TJixWinControl.Create(Aowner: Tcomponent);
 Begin
   Inherited;
 
+  UseCustomRect:= False;
+
+  ControlStyle:= ControlStyle +[csParentBackground];
+
   StateNormal:= jJixState.Create;
   StateHover:= jJixState.Create;
   StateClick:= jJixState.Create;
@@ -883,6 +911,14 @@ Var
   g: TBGRAMultiGradient;
   gs: TBGRAGradientScanner;
 Begin
+  if not UseCustomRect then
+  Begin
+    ScreenRect.Left:= 0;
+    ScreenRect.Top:= 0;
+    ScreenRect.Width:= Width;
+    ScreenRect.Height:= Height;
+  End;
+
   if not(Visible or (csDesigning in ComponentState)) then Exit;
 
   Canvas.Changing;
@@ -895,7 +931,9 @@ Begin
     jbgsColor:
       Begin
         Bmp.FillRoundRectAntialias(
-          0, 0, Width-1, Height-1,
+          ScreenRect.Left, ScreenRect.Top,
+          ScreenRect.Right-1, ScreenRect.Bottom-1,
+
           NowState.Rounding.RoundX, NowState.Rounding.RoundY,
           AddAlpha(NowState.Background.Color ,NowState.Background.Opacity),
           NowState.Rounding.Options
@@ -923,18 +961,20 @@ Begin
           g,
           NowState.Background.GradientType,
           PointF(
-            NowState.Background.Point1.XPercent/100*Width,
-            NowState.Background.Point1.YPercent/100*Height
+            NowState.Background.Point1.XPercent/100*ScreenRect.Width,
+            NowState.Background.Point1.YPercent/100*ScreenRect.Height
           ),
           PointF(
-            NowState.Background.Point2.XPercent/100*Width,
-            NowState.Background.Point2.YPercent/100*Height
+            NowState.Background.Point2.XPercent/100*ScreenRect.Width,
+            NowState.Background.Point2.YPercent/100*ScreenRect.Height
           )
         );
         gs.Sinus:= NowState.Background.Sinus;
 
         Bmp.FillRoundRectAntialias(
-          0, 0, Width-1, Height-1,
+          ScreenRect.Left, ScreenRect.Top,
+          ScreenRect.Right-1, ScreenRect.Bottom-1,
+
           NowState.Rounding.RoundX, NowState.Rounding.RoundY,
           gs, NowState.Rounding.Options
         );
@@ -948,7 +988,9 @@ Begin
   if NowState.Border.Style = jbsSolid then
   Begin
     Bmp.RoundRectAntialias(
-      0, 0, Width-1, Height-1,
+      ScreenRect.Left, ScreenRect.Top,
+      ScreenRect.Right-1, ScreenRect.Bottom-1,
+
       NowState.Rounding.RoundX, NowState.Rounding.RoundY,
       AddAlpha(
         NowState.Border.ExColor,
@@ -974,10 +1016,10 @@ Begin
 
   Bmp.TextRect(
     Classes.Rect(
-      NowState.FontEx.PaddingLeft,
-      NowState.FontEx.PaddingTop,
-      Width  -NowState.FontEx.PaddingRight,
-      Height -NowState.FontEx.PaddingBottom
+      ScreenRect.Left +NowState.FontEx.PaddingLeft,
+      ScreenRect.Top  +NowState.FontEx.PaddingTop,
+      ScreenRect.Right  -NowState.FontEx.PaddingRight,
+      ScreenRect.Bottom -NowState.FontEx.PaddingBottom
     ),
     NowState.FontEx.PaddingLeft,
     NowState.FontEx.PaddingTop,

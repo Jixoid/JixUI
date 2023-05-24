@@ -59,6 +59,7 @@ Type
   TAdd = Class(TJedabSubClass)
     Public
       Procedure Table(var Select: TDB);
+      Procedure Table(var Select: TDB; X,Y: Integer);
       Procedure Row(var Select: TDB; TableID: Integer);
       Procedure Column(var Select: TDB; TableID: Integer);
   End;

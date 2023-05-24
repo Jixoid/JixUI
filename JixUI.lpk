@@ -10,16 +10,22 @@
       <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <OtherUnitFiles Value="JixDialogs;Components;Components\JixComboBox;Components\JixCheckBox;Components\JixRadioButton;Components\JixButton;Components\JixPanel;Components\JixPanelEx;Components\JixProgressBar;Components\JixPaintBox;Components\JixProgressBarEx;Components\JixPaintBoxWin"/>
+        <OtherUnitFiles Value="JixDialogs;Components;Components\JixComboBox;Components\JixCheckBox;Components\JixRadioButton;Components\JixButton;Components\JixPanel;Components\JixPanelEx;Components\JixProgressBar;Components\JixPaintBox;Components\JixProgressBarEx;Components\JixPaintBoxWin;Components\JixScrollBar"/>
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
+      <Other>
+        <Verbosity>
+          <ShowHintsForUnusedUnitsInMainSrc Value="True"/>
+        </Verbosity>
+        <WriteFPCLogo Value="False"/>
+      </Other>
     </CompilerOptions>
     <Description Value="JCL 0.6
 JixDialogs 4.0
 Jedab 9.8
 JGL 1.1"/>
     <License Value="GPL licence"/>
-    <Version Major="4" Minor="3" Release="2" Build="2"/>
+    <Version Major="4" Minor="3" Release="5"/>
     <Files>
       <Item>
         <Filename Value="JForms.pas"/>
@@ -99,15 +105,9 @@ JGL 1.1"/>
         <UnitName Value="JixPaintBoxWin"/>
       </Item>
       <Item>
-        <Filename Value="Components\portableform.pas"/>
+        <Filename Value="Components\JixScrollBar\jixscrollbar.pas"/>
         <HasRegisterProc Value="True"/>
-        <AddToUsesPkgSection Value="False"/>
-        <UnitName Value="PortableForm"/>
-      </Item>
-      <Item>
-        <Filename Value="Components\portablejixform.pas"/>
-        <HasRegisterProc Value="True"/>
-        <UnitName Value="PortableJixForm"/>
+        <UnitName Value="JixScrollBar"/>
       </Item>
     </Files>
     <RequiredPkgs>

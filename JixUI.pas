@@ -10,8 +10,8 @@ Interface
 uses
   JForms, JixPas, JGL, Jedab, JDialogs, JixComponent, JixButton, JixComboBox, 
   JixCheckBox, JixRadioButton, JixPanel, JixPanelEx, JixProgressBar, 
-  JixProgressBarEx, JixPaintBox, JixPaintBoxWin, PortableForm, 
-  PortableJixForm, LazarusPackageIntf;
+  JixProgressBarEx, JixPaintBox, JixPaintBoxWin, JixScrollBar, 
+  LazarusPackageIntf;
 
 Implementation
 
@@ -28,8 +28,7 @@ Begin
   Registerunit('JixProgressBarEx', @Jixprogressbarex.Register);
   Registerunit('JixPaintBox', @Jixpaintbox.Register);
   Registerunit('JixPaintBoxWin', @Jixpaintboxwin.Register);
-  Registerunit('PortableForm', @Portableform.Register);
-  Registerunit('PortableJixForm', @Portablejixform.Register);
+  Registerunit('JixScrollBar', @Jixscrollbar.Register);
 End;
 
 Initialization
