@@ -14,6 +14,7 @@ Sizin yapmanız gereken şey tema şablonu oluşturmak, bu şablonu boyamak ve b
 Basit, Bileşenin ve Şablonun ThemeName'i uyuştuğunda temayı bileşene uygular.
 
 Şuan daha çok yeni, hatalar var biliyorum.
+Güncellemeler gelicektir hataları bildirirseniz seviniriz.
 
 
 English =====>
@@ -29,3 +30,4 @@ Your task is to create a theme template. JixUI's task is to paint this template 
 It's simple, when the ThemeName of the Component and Template match, it applies the theme to the component.
 
 I'm still fairly new and I know there are errors.
+Updates will come, we will be glad if you report bugs.
