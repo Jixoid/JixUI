@@ -10,7 +10,7 @@ Bu paketin geliştiricileri:
  -Alforce(Abdulkadir AYDIN) | jixoid@gmail.com
 
 Asıl amacı hiç uğraşmadan temalar oluşturmak ve uygulamaktır. Neredeyse sıfır kod.
-Sizin yapmanız gereken şey tema şablonu oluşturmak, Bu şablonu boyamak ve bileşenlere uygulamak JixUI'ın görevi.
+Sizin yapmanız gereken şey tema şablonu oluşturmak, bu şablonu boyamak ve bileşenlere uygulamak JixUI'ın görevi.
 Basit, Bileşenin ve Şablonun ThemeName'i uyuştuğunda temayı bileşene uygular.
 
 Şuan daha çok yeni, hatalar var biliyorum.
