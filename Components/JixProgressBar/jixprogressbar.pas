@@ -10,6 +10,11 @@ uses
   JixPas, JixComponent, JForms;
 
 type
+  eProgressbarStyle = (
+    jpsOld,
+    jpsNew
+  );
+
   eProgressOrientation = (
     jpoLeftToRight,
     jpoRightToLeft,
@@ -24,18 +29,20 @@ type
     Var FProgress: Int16S;
     Var FBarBlur: Int8U;
     Var FOrientation: eProgressOrientation;
+    Var FBarStyle: eProgressbarStyle;
 
     Procedure SetMin(Value: Int16S);
     Procedure SetMax(Value: Int16S);
     Procedure SetValue(Value: Int16S);
     Procedure SetBarBlur(Value: Int8U);
     Procedure SetOrientation(Value: eProgressOrientation);
+    Procedure SetBarStyle(Value: eProgressbarStyle);
 
   Protected
     Procedure Paint; Override;
-    Procedure SetTemplate(Temp: Jtemplatecollectionitem); Override;
 
   Public
+    Procedure SetTemplate(Temp: Jtemplatecollectionitem); Override;
     Constructor Create(Aowner: Tcomponent); Override;
 
   Published
@@ -45,6 +52,8 @@ type
     Property BarBlur: Int8U   Read FBarBlur     Write SetBarBlur     Default 10;
     Property Orientation: eProgressOrientation
                               Read FOrientation Write SetOrientation Default jpoLeftToRight;
+    Property BarStyle: eProgressbarStyle
+                              Read FBarStyle    Write SetBarStyle    Default jpsNew;
 
     Property Tooltip;
     Property ShowTooltip;
@@ -80,6 +89,10 @@ implementation
 Constructor TJixProgressBar.Create(Aowner: Tcomponent);
 Begin
   Inherited;
+
+  UseCustomRect:= True;
+
+  FBarStyle:= jpsNew;
 
   Static:= True;
 
@@ -129,7 +142,65 @@ Var
 
   g: TBGRAMultiGradient;
   gs: TBGRAGradientScanner;
+
+Var
+  Cac: String;
 Begin
+
+  if BarStyle = jpsNew then
+  Begin
+    ScreenRect.Left:= 0;
+    ScreenRect.Top:= 0;
+    ScreenRect.Width:= Width;
+    ScreenRect.Height:= Height;
+
+    Inherited;
+
+    Case Orientation of
+      jpoLeftToRight: Begin
+
+          ScreenRect.Left:= 0;
+          ScreenRect.Top:= 0;
+          ScreenRect.Width:= Round(Width*CalcProgressPer/100);
+          ScreenRect.Height:= Height;
+        End;
+
+      jpoRightToLeft: Begin
+
+          ScreenRect.Left:= Width -Round(Width*CalcProgressPer/100);
+          ScreenRect.Top:= 0;
+          ScreenRect.Right:= Width;
+          ScreenRect.Height:= Height;
+        End;
+
+      jpoTopToBottom: Begin
+
+          ScreenRect.Left:= 0;
+          ScreenRect.Top:= 0;
+          ScreenRect.Width:= Width;
+          ScreenRect.Height:= Round(Height*CalcProgressPer/100);
+        End;
+
+      jpoBottomToTop: Begin
+
+          ScreenRect.Left:= 0;
+          ScreenRect.Top:= Height -Round(Height*CalcProgressPer/100);
+          ScreenRect.Right:= Width;
+          ScreenRect.Height:= Height;
+        End;
+    End;
+
+    Cac:= Caption;
+    Caption:= '';
+
+    Inherited;
+
+    Caption:= Cac;
+
+    Exit;
+  End;
+
+
   if not(Visible or (csDesigning in ComponentState)) then Exit;
 
   Canvas.Changing;
@@ -173,11 +244,11 @@ Begin
         g,
         NowState.Background.GradientType,
         PointF(
-          (CalcProgressPer+BarBlur)/100*Width,
+          Width -(CalcProgressPer/100*Width),
           0
         ),
         PointF(
-          CalcProgressPer/100*Width,
+          Width -((CalcProgressPer+BarBlur)/100*Width),
           0
         )
       );
@@ -202,11 +273,11 @@ Begin
         NowState.Background.GradientType,
         PointF(
           0,
-          (CalcProgressPer+BarBlur)/100*Height
+          Height -(CalcProgressPer/100*Height)
         ),
         PointF(
           0,
-          CalcProgressPer/100*Height
+          Height -((CalcProgressPer+BarBlur)/100*Height)
         )
       );
   End;
@@ -347,6 +418,14 @@ Begin
   Invalidate;
 End;
 
+Procedure TJixProgressBar.SetBarStyle(Value: eProgressbarStyle);
+Begin
+  if FBarStyle = Value then Exit;
+
+  FBarStyle:= Value;
+
+  Invalidate;
+End;
 
 procedure Register;
 begin

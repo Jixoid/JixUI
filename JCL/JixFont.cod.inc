@@ -11,7 +11,7 @@ Begin
   FPadT:= 0;
   FPadR:= 0;
   FPadB:= 0;
-  FSingleLine:= True;
+  FSingleLine:= False;
   FStyle:= [];
   FWordBreak:= False;
   FAlignment:= taCenter;

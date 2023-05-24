@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, LResources, Forms, Controls, Graphics, Dialogs, BCComboBox,
-  JixComponent, JForms, MiniJixoid_JCL, JixPas;
+  JixComponent, JForms, JixPas;
 
 type
   TJixComboBox = class(TBCComboBox, iJixComponent)
