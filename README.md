@@ -9,8 +9,8 @@ Bu paket kurulmadan önce BGRAControls ve BGRABitmap kurulmalıdır!
 Bu paketin geliştiricileri:
  -Alforce(Abdulkadir AYDIN) | jixoid@gmail.com
 
-Asıl amacı hiç uğraşmadan temalar oluşturmak ve uygulamaktır. Neredeyse 0 kod.
-Sizin yapmanız gereken şey tema şablonu oluşturmak. Bu şablonu boyamak ve bileşenlere uygulamak JixUI'ın görevi.
+Asıl amacı hiç uğraşmadan temalar oluşturmak ve uygulamaktır. Neredeyse sıfır kod.
+Sizin yapmanız gereken şey tema şablonu oluşturmak, Bu şablonu boyamak ve bileşenlere uygulamak JixUI'ın görevi.
 Basit, Bileşenin ve Şablonun ThemeName'i uyuştuğunda temayı bileşene uygular.
 
 Şuan daha çok yeni, hatalar var biliyorum.
@@ -24,7 +24,7 @@ It is currently under the GPL license.
 The developers of this package:
  -Alforce(Abdulkadir AYDIN) | jixoid@gmail.com
  
-The main goal is to create and apply themes without any hassle, with almost 0 code. 
+The main goal is to create and apply themes without any hassle, with almost zero code. 
 Your task is to create a theme template. JixUI's task is to paint this template and apply it to the components.
 It's simple, when the ThemeName of the Component and Template match, it applies the theme to the component.
 
