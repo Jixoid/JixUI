@@ -1,6 +1,0 @@
-{"version":1,"strings":[
-{"hash":80320065,"name":"tformcustomerror.caption","sourcebytes":[69,114,114,111,114,33],"value":"Error!"},
-{"hash":159887390,"name":"tformcustomerror.labelcaption.caption","sourcebytes":[67,97,112,116,105,111,110],"value":"Caption"},
-{"hash":21335,"name":"tformcustomerror.bcbutton1.caption","sourcebytes":[76,111,103],"value":"Log"},
-{"hash":141053841,"name":"tformcustomerror.bcpanel1.caption","sourcebytes":[66,67,80,97,110,101,108,49],"value":"BCPanel1"}
-]}
