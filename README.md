@@ -1,7 +1,7 @@
 # JixUI
 v4.4 -Beta
 
-Türkçe =====>
+**Türkçe =====>**
 
 JixUI bir Lazarus paketidir.
 Bu paket kurulmadan önce BGRAControls ve BGRABitmap kurulmalıdır!
@@ -17,7 +17,7 @@ Basit, Bileşenin ve Şablonun ThemeName'i uyuştuğunda temayı bileşene uygul
 Güncellemeler gelicektir hataları bildirirseniz seviniriz.
 
 
-English =====>
+**English =====>**
 
 JixUI is a Lazarus package.
 BGRAControls and BGRABitmap must be installed before this package is installed!
