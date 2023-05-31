@@ -4,7 +4,7 @@ v4.4 -Beta
 **Türkçe =====>**
 
 JixUI bir Lazarus paketidir.
-Bu paket kurulmadan önce BGRAControls ve BGRABitmap kurulmalıdır!
+Bu paket kurulmadan önce BGRABitmap kurulmalıdır!
 Şu anda GPL lisansı altındadır.
 Bu paketin geliştiricileri:
  -Alforce(Abdulkadir AYDIN) | jixoid@gmail.com
