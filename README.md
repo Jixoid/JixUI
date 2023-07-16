@@ -3,6 +3,8 @@ v4.9.6.1
 
 Türkçe =====>
 
+Çok yakında...
+
 JixUI bir Lazarus paketidir.
 
 Bir sorun veya öneri için Jixoid@gmail.com adresinden iletişime geçebilirsiniz.
@@ -30,6 +32,8 @@ Güncellemeler gelicektir hataları bildirirseniz seviniriz.
 
 
 English =====>
+
+Very soon...
 
 JixUI is a Lazarus package.
 
