@@ -1,0 +1,17 @@
+{"version":1,"strings":[
+{"hash":231974754,"name":"tformbordereditor.caption","sourcebytes":[66,111,114,100,101,114,32,69,100,105,116,111,114],"value":"Border Editor"},
+{"hash":126668695,"name":"tformbordereditor.jixbutton1.caption","sourcebytes":[80,114,101,118,105,101,119],"value":"Preview"},
+{"hash":15552448,"name":"tformbordereditor.jixfillbarp1.caption","sourcebytes":[79,112,97,99,105,116,121,32,37,51,48],"value":"Opacity %30"},
+{"hash":262943381,"name":"tformbordereditor.jixbutcolorp1.tooltip","sourcebytes":[69,118,101,110,32,105,102,32,121,111,117,32,99,104,97,110,103,101,32,105,116,44,32,105,116,32,112,114,111,98,97,98,108,121,32,119,111,110,39,116,32,98,101,32,97,112,112,108,105,101,100,32,98,101,99,97,117,115,101,32,111,102,32,116,104,101,32,116,104,101,109,101],"value":"Even if you change it, it probably won't be applied because of the theme"},
+{"hash":12558,"name":"tformbordereditor.jixbutcolorp1.caption","sourcebytes":[46,46,46],"value":"..."},
+{"hash":19642,"name":"tformbordereditor.jixlabel2.caption","sourcebytes":[69,120,58],"value":"Ex:"},
+{"hash":234597264,"name":"tformbordereditor.label1.caption","sourcebytes":[87,105,100,116,104,58,32],"value":"Width: "},
+{"hash":15552448,"name":"tformbordereditor.jixfillbarp2.caption","sourcebytes":[79,112,97,99,105,116,121,32,37,51,48],"value":"Opacity %30"},
+{"hash":262943381,"name":"tformbordereditor.jixbutcolorp2.tooltip","sourcebytes":[69,118,101,110,32,105,102,32,121,111,117,32,99,104,97,110,103,101,32,105,116,44,32,105,116,32,112,114,111,98,97,98,108,121,32,119,111,110,39,116,32,98,101,32,97,112,112,108,105,101,100,32,98,101,99,97,117,115,101,32,111,102,32,116,104,101,32,116,104,101,109,101],"value":"Even if you change it, it probably won't be applied because of the theme"},
+{"hash":12558,"name":"tformbordereditor.jixbutcolorp2.caption","sourcebytes":[46,46,46],"value":"..."},
+{"hash":20506,"name":"tformbordereditor.jixlabel3.caption","sourcebytes":[73,110,58],"value":"In:"},
+{"hash":234597264,"name":"tformbordereditor.label2.caption","sourcebytes":[87,105,100,116,104,58,32],"value":"Width: "},
+{"hash":4860802,"name":"tformbordereditor.jixradiobutton1.caption","sourcebytes":[67,108,101,97,114],"value":"Clear"},
+{"hash":5923572,"name":"tformbordereditor.jixradiobutton2.caption","sourcebytes":[83,111,108,105,100],"value":"Solid"},
+{"hash":366789,"name":"tformbordereditor.jixbutton2.caption","sourcebytes":[83,97,118,101],"value":"Save"}
+]}

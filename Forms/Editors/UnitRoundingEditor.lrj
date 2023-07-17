@@ -1,0 +1,17 @@
+{"version":1,"strings":[
+{"hash":150059154,"name":"tformroundingeditor.caption","sourcebytes":[82,111,117,110,100,105,110,103,32,69,100,105,116,111,114],"value":"Rounding Editor"},
+{"hash":126668695,"name":"tformroundingeditor.jixbutton1.caption","sourcebytes":[80,114,101,118,105,101,119],"value":"Preview"},
+{"hash":94943365,"name":"tformroundingeditor.jixlts.caption","sourcebytes":[83,113,117,97,114,101],"value":"Square"},
+{"hash":4771004,"name":"tformroundingeditor.jixltb.caption","sourcebytes":[66,101,118,101,108],"value":"Bevel"},
+{"hash":94943365,"name":"tformroundingeditor.jixlbs.caption","sourcebytes":[83,113,117,97,114,101],"value":"Square"},
+{"hash":4771004,"name":"tformroundingeditor.jixlbb.caption","sourcebytes":[66,101,118,101,108],"value":"Bevel"},
+{"hash":94943365,"name":"tformroundingeditor.jixrts.caption","sourcebytes":[83,113,117,97,114,101],"value":"Square"},
+{"hash":4771004,"name":"tformroundingeditor.jixrtb.caption","sourcebytes":[66,101,118,101,108],"value":"Bevel"},
+{"hash":94943365,"name":"tformroundingeditor.jixrbs.caption","sourcebytes":[83,113,117,97,114,101],"value":"Square"},
+{"hash":4771004,"name":"tformroundingeditor.jixrbb.caption","sourcebytes":[66,101,118,101,108],"value":"Bevel"},
+{"hash":158091754,"name":"tformroundingeditor.label1.caption","sourcebytes":[82,111,117,110,100,88,58],"value":"RoundX:"},
+{"hash":158091674,"name":"tformroundingeditor.label2.caption","sourcebytes":[82,111,117,110,100,89,58],"value":"RoundY:"},
+{"hash":366789,"name":"tformroundingeditor.jixbuttonsave.caption","sourcebytes":[83,97,118,101],"value":"Save"},
+{"hash":206169430,"name":"tformroundingeditor.jixfillbar1.caption","sourcebytes":[82,111,117,110,100,88,58,32,54],"value":"RoundX: 6"},
+{"hash":206148950,"name":"tformroundingeditor.jixfillbar2.caption","sourcebytes":[82,111,117,110,100,89,58,32,54],"value":"RoundY: 6"}
+]}

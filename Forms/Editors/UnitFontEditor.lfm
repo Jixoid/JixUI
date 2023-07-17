@@ -1,0 +1,1495 @@
+object FormFontEditor: TFormFontEditor
+  Left = 257
+  Height = 288
+  Top = 32
+  Width = 520
+  BorderIcons = [biSystemMenu]
+  Caption = 'Font Editor'
+  ClientHeight = 288
+  ClientWidth = 520
+  Color = clBlack
+  Constraints.MinHeight = 288
+  Constraints.MinWidth = 520
+  Font.CharSet = TURKISH_CHARSET
+  Font.Color = clWhite
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnCreate = FormCreate
+  OnShow = FormShow
+  object JixPanel1: TJixPanel
+    Left = 0
+    Height = 288
+    Top = 0
+    Width = 520
+    ThemeName = 'Default'
+    StateNormal.Border.ExColor = 2298344
+    StateNormal.Border.ExOpacity = 100
+    StateNormal.Border.ExWidth = 0
+    StateNormal.Border.InColor = 2298344
+    StateNormal.Border.InOpacity = 255
+    StateNormal.Border.Style = jbsClear
+    StateNormal.Background.Color = 2298344
+    StateNormal.Background.Opacity = 100
+    StateNormal.Background.Style = jbgsClear
+    StateNormal.Background.Point1.Color = 2298344
+    StateNormal.Background.Point1.Opacity = 255
+    StateNormal.Background.Point2.Color = 2298344
+    StateNormal.Background.Point2.Opacity = 255
+    StateNormal.FontEx.Color = clWhite
+    StateNormal.FontEx.Name = 'default'
+    StateNormal.Picture.Scale = 1
+    StateNormal.Picture.Opacity = 255
+    StateNormal.Picture.Locate = jplCenter
+    StateNormal.Picture.DistanceToText = 2
+    StateNormal.Rounding.RoundX = 8
+    StateNormal.Rounding.RoundY = 8
+    StateNormal.Rounding.Options = []
+    IgnoreTempStyle = True
+    Align = alClient
+    object JixPanel2: TJixPanel
+      Left = 303
+      Height = 184
+      Top = 23
+      Width = 198
+      ThemeName = 'Default'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsClear
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopLeftSquare, rrBottomLeftSquare]
+      IgnoreTempStyle = True
+      Anchors = []
+      object JixButton1: TJixButton
+        AnchorSideLeft.Control = JixPanel2
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = JixPanel2
+        AnchorSideTop.Side = asrCenter
+        Left = 49
+        Height = 44
+        Top = 70
+        Width = 100
+        ThemeName = 'Private'
+        Static = True
+        Caption = 'Preview'
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsNi
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        StateHover.Border.ExColor = 2298344
+        StateHover.Border.ExOpacity = 255
+        StateHover.Border.InColor = 2298344
+        StateHover.Border.InOpacity = 255
+        StateHover.Background.Color = 2298344
+        StateHover.Background.Opacity = 125
+        StateHover.Background.Style = jbgsNi
+        StateHover.Background.Point1.Color = 2298344
+        StateHover.Background.Point1.Opacity = 255
+        StateHover.Background.Point2.Color = 2298344
+        StateHover.Background.Point2.Opacity = 255
+        StateHover.FontEx.Color = clWhite
+        StateHover.FontEx.Name = 'default'
+        StateHover.Picture.Scale = 1
+        StateHover.Picture.Opacity = 255
+        StateHover.Picture.Locate = jplCenter
+        StateHover.Picture.DistanceToText = 2
+        StateHover.Rounding.RoundX = 8
+        StateHover.Rounding.RoundY = 8
+        StateHover.Rounding.Options = []
+        StateClick.Border.ExColor = 2298344
+        StateClick.Border.ExOpacity = 255
+        StateClick.Border.InColor = 2298344
+        StateClick.Border.InOpacity = 255
+        StateClick.Background.Color = 2298344
+        StateClick.Background.Opacity = 50
+        StateClick.Background.Style = jbgsNi
+        StateClick.Background.Point1.Color = 2298344
+        StateClick.Background.Point1.Opacity = 255
+        StateClick.Background.Point2.Color = 2298344
+        StateClick.Background.Point2.Opacity = 255
+        StateClick.FontEx.Color = clWhite
+        StateClick.FontEx.Name = 'default'
+        StateClick.Picture.Scale = 1
+        StateClick.Picture.Opacity = 255
+        StateClick.Picture.Locate = jplCenter
+        StateClick.Picture.DistanceToText = 2
+        StateClick.Rounding.RoundX = 8
+        StateClick.Rounding.RoundY = 8
+        StateClick.Rounding.Options = []
+      end
+      object JixLL: TJixLabel
+        Tag = 1
+        AnchorSideLeft.Control = JixButton1
+        AnchorSideBottom.Control = JixButton1
+        Left = 49
+        Height = 18
+        Top = 49
+        Width = 32
+        ThemeName = 'Default'
+        IgnoreTempStyle = True
+        BorderSpacing.Bottom = 3
+        Anchors = [akLeft, akBottom]
+        AutoSize = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 192
+        StateNormal.Background.Style = jbgsClear
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = [rrTopRightSquare, rrBottomRightSquare, rrBottomLeftSquare]
+        OnClick = JixLLClick
+      end
+      object JixLC: TJixLabel
+        Tag = 2
+        AnchorSideLeft.Control = JixLL
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = JixButton1
+        Left = 83
+        Height = 18
+        Top = 49
+        Width = 32
+        ThemeName = 'Default'
+        IgnoreTempStyle = True
+        BorderSpacing.Left = 2
+        BorderSpacing.Bottom = 3
+        Anchors = [akLeft, akBottom]
+        AutoSize = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 191
+        StateNormal.Background.Style = jbgsColor
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare, rrBottomRightSquare, rrBottomLeftSquare]
+        OnClick = JixLLClick
+      end
+      object JixLR: TJixLabel
+        Tag = 3
+        AnchorSideLeft.Control = JixLC
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = JixButton1
+        Left = 117
+        Height = 18
+        Top = 49
+        Width = 32
+        ThemeName = 'Default'
+        IgnoreTempStyle = True
+        BorderSpacing.Left = 2
+        BorderSpacing.Bottom = 3
+        Anchors = [akLeft, akBottom]
+        AutoSize = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 192
+        StateNormal.Background.Style = jbgsClear
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = [rrTopLeftSquare, rrBottomRightSquare, rrBottomLeftSquare]
+        OnClick = JixLLClick
+      end
+      object JixTT: TJixLabel
+        Tag = 4
+        AnchorSideTop.Control = JixButton1
+        AnchorSideRight.Control = JixButton1
+        Left = 28
+        Height = 14
+        Top = 70
+        Width = 18
+        ThemeName = 'Default'
+        IgnoreTempStyle = True
+        BorderSpacing.Right = 3
+        Anchors = [akTop, akRight]
+        AutoSize = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 191
+        StateNormal.Background.Style = jbgsClear
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = [rrTopRightSquare, rrBottomRightSquare, rrBottomLeftSquare]
+        OnClick = JixLLClick
+      end
+      object JixTC: TJixLabel
+        Tag = 5
+        AnchorSideTop.Control = JixTT
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = JixButton1
+        Left = 28
+        Height = 14
+        Top = 85
+        Width = 18
+        ThemeName = 'Default'
+        IgnoreTempStyle = True
+        BorderSpacing.Top = 1
+        BorderSpacing.Right = 3
+        Anchors = [akTop, akRight]
+        AutoSize = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 191
+        StateNormal.Background.Style = jbgsColor
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare, rrBottomRightSquare, rrBottomLeftSquare]
+        OnClick = JixLLClick
+      end
+      object JixTB: TJixLabel
+        Tag = 6
+        AnchorSideTop.Control = JixTC
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = JixButton1
+        Left = 28
+        Height = 14
+        Top = 100
+        Width = 18
+        ThemeName = 'Default'
+        IgnoreTempStyle = True
+        BorderSpacing.Top = 1
+        BorderSpacing.Right = 3
+        Anchors = [akTop, akRight]
+        AutoSize = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 192
+        StateNormal.Background.Style = jbgsClear
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare, rrBottomRightSquare]
+        OnClick = JixLLClick
+      end
+    end
+    object JixEditColorP1: TJixEdit
+      AnchorSideTop.Side = asrBottom
+      Left = 16
+      Height = 21
+      Top = 36
+      Width = 107
+      ThemeName = 'Default'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsColor
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopRightSquare, rrBottomRightSquare]
+      IgnoreTempStyle = True
+      Text = 'clBlack'
+      ReadOnly = True
+      MaxLength = 0
+      BorderSpacing.Left = 5
+      Anchors = []
+    end
+    object JixButColorP1: TJixButton
+      AnchorSideLeft.Control = JixEditColorP1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = JixEditColorP1
+      AnchorSideRight.Side = asrBottom
+      Left = 128
+      Height = 21
+      Top = 36
+      Width = 21
+      ThemeName = 'Default'
+      Tooltip = 'Even if you change it, it probably won''t be applied because of the theme'
+      ShowTooltip = True
+      BorderSpacing.Left = 5
+      Caption = '...'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsNi
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopLeftSquare, rrBottomLeftSquare]
+      StateHover.Border.ExColor = 2298344
+      StateHover.Border.ExOpacity = 255
+      StateHover.Border.InColor = 2298344
+      StateHover.Border.InOpacity = 255
+      StateHover.Background.Color = 2298344
+      StateHover.Background.Opacity = 125
+      StateHover.Background.Style = jbgsNi
+      StateHover.Background.Point1.Color = 2298344
+      StateHover.Background.Point1.Opacity = 255
+      StateHover.Background.Point2.Color = 2298344
+      StateHover.Background.Point2.Opacity = 255
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.Name = 'default'
+      StateHover.Picture.Scale = 1
+      StateHover.Picture.Opacity = 255
+      StateHover.Picture.Locate = jplCenter
+      StateHover.Picture.DistanceToText = 2
+      StateHover.Rounding.RoundX = 8
+      StateHover.Rounding.RoundY = 8
+      StateHover.Rounding.Options = [rrTopLeftSquare, rrBottomLeftSquare]
+      StateClick.Border.ExColor = 2298344
+      StateClick.Border.ExOpacity = 255
+      StateClick.Border.InColor = 2298344
+      StateClick.Border.InOpacity = 255
+      StateClick.Background.Color = 2298344
+      StateClick.Background.Opacity = 50
+      StateClick.Background.Style = jbgsNi
+      StateClick.Background.Point1.Color = 2298344
+      StateClick.Background.Point1.Opacity = 255
+      StateClick.Background.Point2.Color = 2298344
+      StateClick.Background.Point2.Opacity = 255
+      StateClick.FontEx.Color = clWhite
+      StateClick.FontEx.Name = 'default'
+      StateClick.Picture.Scale = 1
+      StateClick.Picture.Opacity = 255
+      StateClick.Picture.Locate = jplCenter
+      StateClick.Picture.DistanceToText = 2
+      StateClick.Rounding.RoundX = 8
+      StateClick.Rounding.RoundY = 8
+      StateClick.Rounding.Options = [rrTopLeftSquare, rrBottomLeftSquare]
+    end
+    object JixEditColorP2: TJixEdit
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Side = asrBottom
+      Left = 16
+      Height = 21
+      Top = 90
+      Width = 107
+      ThemeName = 'Default'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsColor
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopRightSquare, rrBottomRightSquare]
+      IgnoreTempStyle = True
+      Text = 'clBlack'
+      ReadOnly = True
+      MaxLength = 0
+      BorderSpacing.Left = 5
+      BorderSpacing.Right = 5
+      Anchors = []
+    end
+    object JixButColorP2: TJixButton
+      AnchorSideLeft.Control = JixEditColorP2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = JixEditColorP2
+      AnchorSideRight.Side = asrBottom
+      Left = 128
+      Height = 21
+      Top = 90
+      Width = 21
+      ThemeName = 'Default'
+      Tooltip = 'Even if you change it, it probably won''t be applied because of the theme'
+      ShowTooltip = True
+      BorderSpacing.Left = 5
+      Caption = '...'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsNi
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopLeftSquare, rrBottomLeftSquare]
+      StateHover.Border.ExColor = 2298344
+      StateHover.Border.ExOpacity = 255
+      StateHover.Border.InColor = 2298344
+      StateHover.Border.InOpacity = 255
+      StateHover.Background.Color = 2298344
+      StateHover.Background.Opacity = 125
+      StateHover.Background.Style = jbgsNi
+      StateHover.Background.Point1.Color = 2298344
+      StateHover.Background.Point1.Opacity = 255
+      StateHover.Background.Point2.Color = 2298344
+      StateHover.Background.Point2.Opacity = 255
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.Name = 'default'
+      StateHover.Picture.Scale = 1
+      StateHover.Picture.Opacity = 255
+      StateHover.Picture.Locate = jplCenter
+      StateHover.Picture.DistanceToText = 2
+      StateHover.Rounding.RoundX = 8
+      StateHover.Rounding.RoundY = 8
+      StateHover.Rounding.Options = [rrTopLeftSquare, rrBottomLeftSquare]
+      StateClick.Border.ExColor = 2298344
+      StateClick.Border.ExOpacity = 255
+      StateClick.Border.InColor = 2298344
+      StateClick.Border.InOpacity = 255
+      StateClick.Background.Color = 2298344
+      StateClick.Background.Opacity = 50
+      StateClick.Background.Style = jbgsNi
+      StateClick.Background.Point1.Color = 2298344
+      StateClick.Background.Point1.Opacity = 255
+      StateClick.Background.Point2.Color = 2298344
+      StateClick.Background.Point2.Opacity = 255
+      StateClick.FontEx.Color = clWhite
+      StateClick.FontEx.Name = 'default'
+      StateClick.Picture.Scale = 1
+      StateClick.Picture.Opacity = 255
+      StateClick.Picture.Locate = jplCenter
+      StateClick.Picture.DistanceToText = 2
+      StateClick.Rounding.RoundX = 8
+      StateClick.Rounding.RoundY = 8
+      StateClick.Rounding.Options = [rrTopLeftSquare, rrBottomLeftSquare]
+    end
+    object Label1: TLabel
+      AnchorSideTop.Side = asrCenter
+      Left = 16
+      Height = 15
+      Top = 124
+      Width = 133
+      Anchors = []
+      AutoSize = False
+      Caption = 'Size:'
+      ParentColor = False
+    end
+    object JixEditX: TJixEdit
+      AnchorSideTop.Side = asrBottom
+      Left = 16
+      Height = 21
+      Top = 139
+      Width = 133
+      ThemeName = 'Default'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsColor
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = []
+      Text = '12'
+      NumberOnly = True
+      MaxLength = 0
+      Anchors = []
+    end
+    object Label2: TLabel
+      Left = 16
+      Height = 15
+      Top = 21
+      Width = 107
+      Anchors = []
+      AutoSize = False
+      Caption = 'Color:'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Height = 15
+      Top = 74
+      Width = 107
+      Anchors = []
+      AutoSize = False
+      Caption = 'Disabled Color:'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      AnchorSideTop.Side = asrCenter
+      Left = 16
+      Height = 15
+      Top = 173
+      Width = 133
+      Anchors = []
+      AutoSize = False
+      Caption = 'Name:'
+      ParentColor = False
+    end
+    object JixEditX1: TJixEdit
+      AnchorSideTop.Side = asrBottom
+      Left = 16
+      Height = 21
+      Top = 189
+      Width = 133
+      ThemeName = 'Default'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsColor
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = []
+      Text = 'Default'
+      NumberOnly = True
+      MaxLength = 0
+      Anchors = []
+    end
+    object JixPanel3: TJixPanel
+      AnchorSideBottom.Side = asrBottom
+      Left = 184
+      Height = 96
+      Top = 112
+      Width = 120
+      ThemeName = 'Default'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsClear
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopRightSquare, rrBottomRightSquare]
+      IgnoreTempStyle = True
+      Anchors = []
+      object JixCheckBox1: TJixCheckBox
+        Left = 5
+        Height = 18
+        Top = 5
+        Width = 43
+        ThemeName = 'Default'
+        Caption = 'Bold'
+        Checked = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsNi
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        StateHover.Border.ExColor = 2298344
+        StateHover.Border.ExOpacity = 255
+        StateHover.Border.InColor = 2298344
+        StateHover.Border.InOpacity = 255
+        StateHover.Background.Color = 2298344
+        StateHover.Background.Opacity = 125
+        StateHover.Background.Style = jbgsNi
+        StateHover.Background.Point1.Color = 2298344
+        StateHover.Background.Point1.Opacity = 255
+        StateHover.Background.Point2.Color = 2298344
+        StateHover.Background.Point2.Opacity = 255
+        StateHover.FontEx.Color = clWhite
+        StateHover.FontEx.Name = 'default'
+        StateHover.Picture.Scale = 1
+        StateHover.Picture.Opacity = 255
+        StateHover.Picture.Locate = jplCenter
+        StateHover.Picture.DistanceToText = 2
+        StateHover.Rounding.RoundX = 8
+        StateHover.Rounding.RoundY = 8
+        StateHover.Rounding.Options = []
+        StateClick.Border.ExColor = 2298344
+        StateClick.Border.ExOpacity = 255
+        StateClick.Border.InColor = 2298344
+        StateClick.Border.InOpacity = 255
+        StateClick.Background.Color = 2298344
+        StateClick.Background.Opacity = 50
+        StateClick.Background.Style = jbgsNi
+        StateClick.Background.Point1.Color = 2298344
+        StateClick.Background.Point1.Opacity = 255
+        StateClick.Background.Point2.Color = 2298344
+        StateClick.Background.Point2.Opacity = 255
+        StateClick.FontEx.Color = clWhite
+        StateClick.FontEx.Name = 'default'
+        StateClick.Picture.Scale = 1
+        StateClick.Picture.Opacity = 255
+        StateClick.Picture.Locate = jplCenter
+        StateClick.Picture.DistanceToText = 2
+        StateClick.Rounding.RoundX = 8
+        StateClick.Rounding.RoundY = 8
+        StateClick.Rounding.Options = []
+        OnChange = JixCheckBox1Change
+      end
+      object JixCheckBox2: TJixCheckBox
+        AnchorSideTop.Control = JixCheckBox1
+        AnchorSideTop.Side = asrBottom
+        Left = 5
+        Height = 18
+        Top = 28
+        Width = 44
+        ThemeName = 'Default'
+        BorderSpacing.Top = 5
+        Caption = 'Italic'
+        Checked = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsNi
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        StateHover.Border.ExColor = 2298344
+        StateHover.Border.ExOpacity = 255
+        StateHover.Border.InColor = 2298344
+        StateHover.Border.InOpacity = 255
+        StateHover.Background.Color = 2298344
+        StateHover.Background.Opacity = 125
+        StateHover.Background.Style = jbgsNi
+        StateHover.Background.Point1.Color = 2298344
+        StateHover.Background.Point1.Opacity = 255
+        StateHover.Background.Point2.Color = 2298344
+        StateHover.Background.Point2.Opacity = 255
+        StateHover.FontEx.Color = clWhite
+        StateHover.FontEx.Name = 'default'
+        StateHover.Picture.Scale = 1
+        StateHover.Picture.Opacity = 255
+        StateHover.Picture.Locate = jplCenter
+        StateHover.Picture.DistanceToText = 2
+        StateHover.Rounding.RoundX = 8
+        StateHover.Rounding.RoundY = 8
+        StateHover.Rounding.Options = []
+        StateClick.Border.ExColor = 2298344
+        StateClick.Border.ExOpacity = 255
+        StateClick.Border.InColor = 2298344
+        StateClick.Border.InOpacity = 255
+        StateClick.Background.Color = 2298344
+        StateClick.Background.Opacity = 50
+        StateClick.Background.Style = jbgsNi
+        StateClick.Background.Point1.Color = 2298344
+        StateClick.Background.Point1.Opacity = 255
+        StateClick.Background.Point2.Color = 2298344
+        StateClick.Background.Point2.Opacity = 255
+        StateClick.FontEx.Color = clWhite
+        StateClick.FontEx.Name = 'default'
+        StateClick.Picture.Scale = 1
+        StateClick.Picture.Opacity = 255
+        StateClick.Picture.Locate = jplCenter
+        StateClick.Picture.DistanceToText = 2
+        StateClick.Rounding.RoundX = 8
+        StateClick.Rounding.RoundY = 8
+        StateClick.Rounding.Options = []
+        OnChange = JixCheckBox1Change
+      end
+      object JixCheckBox3: TJixCheckBox
+        AnchorSideTop.Control = JixCheckBox2
+        AnchorSideTop.Side = asrBottom
+        Left = 5
+        Height = 18
+        Top = 51
+        Width = 70
+        ThemeName = 'Default'
+        BorderSpacing.Top = 5
+        Caption = 'Underline'
+        Checked = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsNi
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        StateHover.Border.ExColor = 2298344
+        StateHover.Border.ExOpacity = 255
+        StateHover.Border.InColor = 2298344
+        StateHover.Border.InOpacity = 255
+        StateHover.Background.Color = 2298344
+        StateHover.Background.Opacity = 125
+        StateHover.Background.Style = jbgsNi
+        StateHover.Background.Point1.Color = 2298344
+        StateHover.Background.Point1.Opacity = 255
+        StateHover.Background.Point2.Color = 2298344
+        StateHover.Background.Point2.Opacity = 255
+        StateHover.FontEx.Color = clWhite
+        StateHover.FontEx.Name = 'default'
+        StateHover.Picture.Scale = 1
+        StateHover.Picture.Opacity = 255
+        StateHover.Picture.Locate = jplCenter
+        StateHover.Picture.DistanceToText = 2
+        StateHover.Rounding.RoundX = 8
+        StateHover.Rounding.RoundY = 8
+        StateHover.Rounding.Options = []
+        StateClick.Border.ExColor = 2298344
+        StateClick.Border.ExOpacity = 255
+        StateClick.Border.InColor = 2298344
+        StateClick.Border.InOpacity = 255
+        StateClick.Background.Color = 2298344
+        StateClick.Background.Opacity = 50
+        StateClick.Background.Style = jbgsNi
+        StateClick.Background.Point1.Color = 2298344
+        StateClick.Background.Point1.Opacity = 255
+        StateClick.Background.Point2.Color = 2298344
+        StateClick.Background.Point2.Opacity = 255
+        StateClick.FontEx.Color = clWhite
+        StateClick.FontEx.Name = 'default'
+        StateClick.Picture.Scale = 1
+        StateClick.Picture.Opacity = 255
+        StateClick.Picture.Locate = jplCenter
+        StateClick.Picture.DistanceToText = 2
+        StateClick.Rounding.RoundX = 8
+        StateClick.Rounding.RoundY = 8
+        StateClick.Rounding.Options = []
+        OnChange = JixCheckBox1Change
+      end
+      object JixCheckBox4: TJixCheckBox
+        AnchorSideTop.Control = JixCheckBox3
+        AnchorSideTop.Side = asrBottom
+        Left = 5
+        Height = 18
+        Top = 74
+        Width = 68
+        ThemeName = 'Default'
+        BorderSpacing.Top = 5
+        Caption = 'StrikeOut'
+        Checked = False
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 255
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsNi
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 255
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        StateHover.Border.ExColor = 2298344
+        StateHover.Border.ExOpacity = 255
+        StateHover.Border.InColor = 2298344
+        StateHover.Border.InOpacity = 255
+        StateHover.Background.Color = 2298344
+        StateHover.Background.Opacity = 125
+        StateHover.Background.Style = jbgsNi
+        StateHover.Background.Point1.Color = 2298344
+        StateHover.Background.Point1.Opacity = 255
+        StateHover.Background.Point2.Color = 2298344
+        StateHover.Background.Point2.Opacity = 255
+        StateHover.FontEx.Color = clWhite
+        StateHover.FontEx.Name = 'default'
+        StateHover.Picture.Scale = 1
+        StateHover.Picture.Opacity = 255
+        StateHover.Picture.Locate = jplCenter
+        StateHover.Picture.DistanceToText = 2
+        StateHover.Rounding.RoundX = 8
+        StateHover.Rounding.RoundY = 8
+        StateHover.Rounding.Options = []
+        StateClick.Border.ExColor = 2298344
+        StateClick.Border.ExOpacity = 255
+        StateClick.Border.InColor = 2298344
+        StateClick.Border.InOpacity = 255
+        StateClick.Background.Color = 2298344
+        StateClick.Background.Opacity = 50
+        StateClick.Background.Style = jbgsNi
+        StateClick.Background.Point1.Color = 2298344
+        StateClick.Background.Point1.Opacity = 255
+        StateClick.Background.Point2.Color = 2298344
+        StateClick.Background.Point2.Opacity = 255
+        StateClick.FontEx.Color = clWhite
+        StateClick.FontEx.Name = 'default'
+        StateClick.Picture.Scale = 1
+        StateClick.Picture.Opacity = 255
+        StateClick.Picture.Locate = jplCenter
+        StateClick.Picture.DistanceToText = 2
+        StateClick.Rounding.RoundX = 8
+        StateClick.Rounding.RoundY = 8
+        StateClick.Rounding.Options = []
+        OnChange = JixCheckBox1Change
+      end
+    end
+    object JixButton2: TJixButton
+      AnchorSideLeft.Control = JixPanel1
+      AnchorSideRight.Control = JixPanel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = JixPanel1
+      AnchorSideBottom.Side = asrBottom
+      Left = 5
+      Height = 30
+      Top = 253
+      Width = 510
+      ThemeName = 'Default'
+      BorderSpacing.Around = 5
+      Anchors = [akLeft, akRight, akBottom]
+      Caption = 'Save'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 100
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsNi
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 0
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare]
+      StateHover.Border.ExColor = 2298344
+      StateHover.Border.ExOpacity = 255
+      StateHover.Border.InColor = 2298344
+      StateHover.Border.InOpacity = 100
+      StateHover.Background.Color = 2298344
+      StateHover.Background.Opacity = 125
+      StateHover.Background.Style = jbgsNi
+      StateHover.Background.Point1.Color = 2298344
+      StateHover.Background.Point1.Opacity = 255
+      StateHover.Background.Point2.Color = 2298344
+      StateHover.Background.Point2.Opacity = 0
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.Name = 'default'
+      StateHover.Picture.Scale = 1
+      StateHover.Picture.Opacity = 255
+      StateHover.Picture.Locate = jplCenter
+      StateHover.Picture.DistanceToText = 2
+      StateHover.Rounding.RoundX = 8
+      StateHover.Rounding.RoundY = 8
+      StateHover.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare]
+      StateClick.Border.ExColor = 2298344
+      StateClick.Border.ExOpacity = 255
+      StateClick.Border.InColor = 2298344
+      StateClick.Border.InOpacity = 100
+      StateClick.Background.Color = 2298344
+      StateClick.Background.Opacity = 50
+      StateClick.Background.Style = jbgsNi
+      StateClick.Background.Point1.Color = 2298344
+      StateClick.Background.Point1.Opacity = 255
+      StateClick.Background.Point2.Color = 2298344
+      StateClick.Background.Point2.Opacity = 0
+      StateClick.FontEx.Color = clWhite
+      StateClick.FontEx.Name = 'default'
+      StateClick.Picture.Scale = 1
+      StateClick.Picture.Opacity = 255
+      StateClick.Picture.Locate = jplCenter
+      StateClick.Picture.DistanceToText = 2
+      StateClick.Rounding.RoundX = 8
+      StateClick.Rounding.RoundY = 8
+      StateClick.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare]
+      OnClick = JixButton2Click
+    end
+    object JixButton3: TJixButton
+      AnchorSideTop.Control = Owner
+      AnchorSideRight.Control = Owner
+      AnchorSideRight.Side = asrBottom
+      Left = -75
+      Height = 30
+      Top = 216
+      Width = 30
+      ThemeName = 'Private'
+      Anchors = [akTop, akRight]
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.ExWidth = 0
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 255
+      StateNormal.Border.Style = jbsClear
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsClear
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 255
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Picture.Data = {
+        1754506F727461626C654E6574776F726B47726170686963A106000089504E47
+        0D0A1A0A0000000D49484452000000E1000000E10803000000096D2248000000
+        017352474200AECE1CE90000000467414D410000B18F0BFC610500000006504C
+        5445FFFFFF00000055C2D37E0000000274524E53FF00E5B7304A000000097048
+        597300000EC300000EC301C76FA8640000061649444154785EEDD7CB62DB3610
+        05D0E4FF7FBA8E74EC5816090CDE60C3B34AA93B83B96D37F9F5FBFFEE6E787D
+        77C3EBBB1B5EDFDDF0FAEE86D77737BCBEBBE1F5DD0DAFEF6E787D77C362BFCE
+        494CD6F1593D72A4A7E9F4A0EBA34C4DD1E1315717323C5EEB4BEEAD62C5604D
+        CFB8B481452335BCE1C856B60D53FD80FB7AB07190BAF54EEBC6DA216A963BAB
+        2BAB07285FEDA4EEACEFAE78B17B46F04267856BDD328A57BA2A5AEA8E813CD4
+        53C94E578CE5AD7EE21B5D309CE7BA092FF4FE0C5EEC24B8CEDB9378B48FD836
+        2FCFE3DD1E42BB3C3B93973B08ACF2E6641E6F97DFE4C5E93CDF2CBBC87B2BB8
+        A0516E8DC7D670439BCC164FADE28A26E9251E5AC71D2D923B3CB3924B1AA456
+        78642DB7D44B6CF0C46AAEA976BEC003EBB9A7D6E9BCF53B7051A5B371CBF7E0
+        A63A27D35657B3061FAB5953E778DAE61A361C10A8614395AE0D4D270816335E
+        E370D6DA3266B3C40B19AE70346A6911A331668A182D773069650183050C1630
+        58EE7DD2C63873850CC7992BD6DCD054050BC28C957A9BB32ECA541D3B820C95
+        FA39675B90A17AF6C49829D4D2D04813AB62CC94F9316555889156B645982853
+        DFD0443BFB224C14791DB228C0401756469828F132634D80814E2C0D3050A2AE
+        A17C3FF6E6C917F83E62499E7C4F36678917A86928DE97DD59E271DF26ACC812
+        EFCDF61CE9B8F286D2FDD99F231DF677C0821CE911BC90211C56DA5078084FE4
+        48477DE58D67080FE2910CE1A8AD1A0E39E2336E3843781CEFA4C9061535941D
+        C94B49A241250D4587F2549A6C8CB4D1B46774306F2589C614347C2687F35A92
+        6848BCE133389EE79244439E6183498FE00CDE4B910C09377CE4A6F0609268C4
+        236B2CE9919EC38B299211D1868FF0249E4C918CD8B161DF7B820D1FD9693C9A
+        2219F0276A28E5199EC6AB098201B186CFEC3C9E4D100CD8B361CF93FE898646
+        126427F2708260DEA60DF347C9E55DB661F8A84843D1A93C9D2098B56BC37E57
+        FDEAF86FAB2B6F9F93CB0A34949CCCE3E7E4B2EE861F2467F3FA39B99CBBE107
+        C9D9BC7E4E2E27DF50703ACF9F93CBF9071A66094EE7F9737239D20982F379FF
+        94588E7482604F364FB1E8BFA1D5132CFBBFD4EEE1424F3D4FEACDF2C1622F3D
+        0EEACFF6A1820F3D6203583F50F49D676E00FB87093F2338800706F1C8D28643
+        2B7A6271C381153DF0C18704C131BCD19DF57FF892203888473AB3FCC1A704C1
+        51BCD295D54FEBFF7EE8998E2C6683BF017BA71B6B3F05FE7621398E773AB1F4
+        CB0E0DBB56B4F2AF2D1A76AC68E1377B34EC56D1BAEF3669D8A9A2652F020DAF
+        53D1AA571F5FFD7C4E74308F35B0E8877D1A3657B4E6A78D1A3656B4E44DA4E1
+        252A5AF16EAB860D152D38F0E727A173CFE80C1E2C66FC48A8E1F6150D1FDAAD
+        615545A3C7620DF7AE68F0C4E367C9844776124F86193B136CB8714543A7766C
+        5854D1C8B968C35D2B1A487846C4531EB9693C9A259E126EB86545E1A45D1BF6
+        3B49CA48D233398D571304330A1AEE56512CE733672A49741ACF9E10CA2A69B8
+        554591BCA2861B551408F88A9A4C939DC7BB6FFC1C51D670978A7E0CF91B369C
+        213C8F775FF829A6B4E10E15FD10F42D6E3E477A1EEF7EF139AABCE1EA8A3E86
+        7D1FB0224B7C1EEF3EF81457D37065451F0ABC8CD892273F8F776B1EAE6BB8AA
+        A27F28F23AF4DC1361609EEA476B1BAEA8E80F857E8C393FC4C8EE7EDEE9FA10
+        239B6B69788D8E6F47BA3DC8D0CEDE6F747B94A97D3537DCBEE3C17D0E2F6070
+        4F47D7B9BB84C91D1DDEE6EC3266B7D3AFE107E37B39BECAC5152CD8C8C949EE
+        AD64C91ECEAE716B23CB963A3DC28D6DEC5AEAFC084736B16AA97FB9618F8A36
+        2D953AC2990D2C5A2A79843BEBD9B354FA088756B366A9DC114EAD64C952D923
+        DC5AC78EA5F24738B68A154B058E706D0D1B968A1CE1DC0A162C153BC2C1C58C
+        2F153CC2C5A54C2F153DC2C9850C2F153FC2D1458C2E557084AB4B985CAAE808
+        77C7995BAAEC088787195BAAF408A707195AAAFC08C7871859AAE608E7071858
+        AAEE0805B2C497AA3D42850CE1A5EA8F50224974A9A623F43827B754E3119A9C
+        915AAAFD08650E892CD5E70885DEF879A97E4728F5C24F4B753E42B34FBE2E35
+        EA88FF7FC37DDC0DAFEF6E787D77C3EBBB1B5EDFDDF0FAEE86D77737BCBEBBE1
+        F5DD0DAFEEF7EFFF00A4528CD0BFE489800000000049454E44AE426082
+      }
+      StateNormal.Picture.Scale = 0.0599999986588955
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare, rrBottomRightSquare, rrBottomLeftSquare]
+      StateHover.Border.ExColor = 2298344
+      StateHover.Border.ExOpacity = 255
+      StateHover.Border.ExWidth = 0
+      StateHover.Border.InColor = 2298344
+      StateHover.Border.InOpacity = 255
+      StateHover.Border.Style = jbsClear
+      StateHover.Background.Color = 7895160
+      StateHover.Background.Opacity = 152
+      StateHover.Background.Style = jbgsColor
+      StateHover.Background.Point1.Color = 2298344
+      StateHover.Background.Point1.Opacity = 255
+      StateHover.Background.Point2.Color = 2298344
+      StateHover.Background.Point2.Opacity = 255
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.Name = 'default'
+      StateHover.Picture.Picture.Data = {
+        1754506F727461626C654E6574776F726B47726170686963A106000089504E47
+        0D0A1A0A0000000D49484452000000E1000000E10803000000096D2248000000
+        017352474200AECE1CE90000000467414D410000B18F0BFC610500000006504C
+        5445FFFFFF00000055C2D37E0000000274524E53FF00E5B7304A000000097048
+        597300000EC300000EC301C76FA8640000061649444154785EEDD7CB62DB3610
+        05D0E4FF7FBA8E74EC5816090CDE60C3B34AA93B83B96D37F9F5FBFFEE6E787D
+        77C3EBBB1B5EDFDDF0FAEE86D77737BCBEBBE1F5DD0DAFEF6E787D77C362BFCE
+        494CD6F1593D72A4A7E9F4A0EBA34C4DD1E1315717323C5EEB4BEEAD62C5604D
+        CFB8B481452335BCE1C856B60D53FD80FB7AB07190BAF54EEBC6DA216A963BAB
+        2BAB07285FEDA4EEACEFAE78B17B46F04267856BDD328A57BA2A5AEA8E813CD4
+        53C94E578CE5AD7EE21B5D309CE7BA092FF4FE0C5EEC24B8CEDB9378B48FD836
+        2FCFE3DD1E42BB3C3B93973B08ACF2E6641E6F97DFE4C5E93CDF2CBBC87B2BB8
+        A0516E8DC7D670439BCC164FADE28A26E9251E5AC71D2D923B3CB3924B1AA456
+        78642DB7D44B6CF0C46AAEA976BEC003EBB9A7D6E9BCF53B7051A5B371CBF7E0
+        A63A27D35657B3061FAB5953E778DAE61A361C10A8614395AE0D4D270816335E
+        E370D6DA3266B3C40B19AE70346A6911A331668A182D773069650183050C1630
+        58EE7DD2C63873850CC7992BD6DCD054050BC28C957A9BB32ECA541D3B820C95
+        FA39675B90A17AF6C49829D4D2D04813AB62CC94F9316555889156B645982853
+        DFD0443BFB224C14791DB228C0401756469828F132634D80814E2C0D3050A2AE
+        A17C3FF6E6C917F83E62499E7C4F36678917A86928DE97DD59E271DF26ACC812
+        EFCDF61CE9B8F286D2FDD99F231DF677C0821CE911BC90211C56DA5078084FE4
+        48477DE58D67080FE2910CE1A8AD1A0E39E2336E3843781CEFA4C9061535941D
+        C94B49A241250D4587F2549A6C8CB4D1B46774306F2589C614347C2687F35A92
+        6848BCE133389EE79244439E6183498FE00CDE4B910C09377CE4A6F0609268C4
+        236B2CE9919EC38B299211D1868FF0249E4C918CD8B161DF7B820D1FD9693C9A
+        2219F0276A28E5199EC6AB098201B186CFEC3C9E4D100CD8B361CF93FE898646
+        126427F2708260DEA60DF347C9E55DB661F8A84843D1A93C9D2098B56BC37E57
+        FDEAF86FAB2B6F9F93CB0A34949CCCE3E7E4B2EE861F2467F3FA39B99CBBE107
+        C9D9BC7E4E2E27DF50703ACF9F93CBF9071A66094EE7F9737239D20982F379FF
+        94588E7482604F364FB1E8BFA1D5132CFBBFD4EEE1424F3D4FEACDF2C1622F3D
+        0EEACFF6A1820F3D6203583F50F49D676E00FB87093F2338800706F1C8D28643
+        2B7A6271C381153DF0C18704C131BCD19DF57FF892203888473AB3FCC1A704C1
+        51BCD295D54FEBFF7EE8998E2C6683BF017BA71B6B3F05FE7621398E773AB1F4
+        CB0E0DBB56B4F2AF2D1A76AC68E1377B34EC56D1BAEF3669D8A9A2652F020DAF
+        53D1AA571F5FFD7C4E74308F35B0E8877D1A3657B4E6A78D1A3656B4E44DA4E1
+        252A5AF16EAB860D152D38F0E727A173CFE80C1E2C66FC48A8E1F6150D1FDAAD
+        615545A3C7620DF7AE68F0C4E367C9844776124F86193B136CB8714543A7766C
+        5854D1C8B968C35D2B1A487846C4531EB9693C9A259E126EB86545E1A45D1BF6
+        3B49CA48D233398D571304330A1AEE56512CE733672A49741ACF9E10CA2A69B8
+        554591BCA2861B551408F88A9A4C939DC7BB6FFC1C51D670978A7E0CF91B369C
+        213C8F775FF829A6B4E10E15FD10F42D6E3E477A1EEF7EF139AABCE1EA8A3E86
+        7D1FB0224B7C1EEF3EF81457D37065451F0ABC8CD892273F8F776B1EAE6BB8AA
+        A27F28F23AF4DC1361609EEA476B1BAEA8E80F857E8C393FC4C8EE7EDEE9FA10
+        239B6B69788D8E6F47BA3DC8D0CEDE6F747B94A97D3537DCBEE3C17D0E2F6070
+        4F47D7B9BB84C91D1DDEE6EC3266B7D3AFE107E37B39BECAC5152CD8C8C949EE
+        AD64C91ECEAE716B23CB963A3DC28D6DEC5AEAFC084736B16AA97FB9618F8A36
+        2D953AC2990D2C5A2A79843BEBD9B354FA088756B366A9DC114EAD64C952D923
+        DC5AC78EA5F24738B68A154B058E706D0D1B968A1CE1DC0A162C153BC2C1C58C
+        2F153CC2C5A54C2F153DC2C9850C2F153FC2D1458C2E557084AB4B985CAAE808
+        77C7995BAAEC088787195BAAF408A707195AAAFC08C7871859AAE608E7071858
+        AAEE0805B2C497AA3D42850CE1A5EA8F50224974A9A623F43827B754E3119A9C
+        915AAAFD08650E892CD5E70885DEF879A97E4728F5C24F4B753E42B34FBE2E35
+        EA88FF7FC37DDC0DAFEF6E787D77C3EBBB1B5EDFDDF0FAEE86D77737BCBEBBE1
+        F5DD0DAFEEF7EFFF00A4528CD0BFE489800000000049454E44AE426082
+      }
+      StateHover.Picture.Scale = 0.0599999986588955
+      StateHover.Picture.Opacity = 255
+      StateHover.Picture.Locate = jplCenter
+      StateHover.Picture.DistanceToText = 2
+      StateHover.Rounding.RoundX = 8
+      StateHover.Rounding.RoundY = 8
+      StateHover.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare, rrBottomRightSquare, rrBottomLeftSquare]
+      StateClick.Border.ExColor = 2298344
+      StateClick.Border.ExOpacity = 255
+      StateClick.Border.ExWidth = 0
+      StateClick.Border.InColor = 2298344
+      StateClick.Border.InOpacity = 255
+      StateClick.Border.Style = jbsClear
+      StateClick.Background.Color = 7895160
+      StateClick.Background.Opacity = 77
+      StateClick.Background.Style = jbgsColor
+      StateClick.Background.Point1.Color = 2298344
+      StateClick.Background.Point1.Opacity = 255
+      StateClick.Background.Point2.Color = 2298344
+      StateClick.Background.Point2.Opacity = 255
+      StateClick.FontEx.Color = clWhite
+      StateClick.FontEx.Name = 'default'
+      StateClick.Picture.Picture.Data = {
+        1754506F727461626C654E6574776F726B47726170686963A106000089504E47
+        0D0A1A0A0000000D49484452000000E1000000E10803000000096D2248000000
+        017352474200AECE1CE90000000467414D410000B18F0BFC610500000006504C
+        5445FFFFFF00000055C2D37E0000000274524E53FF00E5B7304A000000097048
+        597300000EC300000EC301C76FA8640000061649444154785EEDD7CB62DB3610
+        05D0E4FF7FBA8E74EC5816090CDE60C3B34AA93B83B96D37F9F5FBFFEE6E787D
+        77C3EBBB1B5EDFDDF0FAEE86D77737BCBEBBE1F5DD0DAFEF6E787D77C362BFCE
+        494CD6F1593D72A4A7E9F4A0EBA34C4DD1E1315717323C5EEB4BEEAD62C5604D
+        CFB8B481452335BCE1C856B60D53FD80FB7AB07190BAF54EEBC6DA216A963BAB
+        2BAB07285FEDA4EEACEFAE78B17B46F04267856BDD328A57BA2A5AEA8E813CD4
+        53C94E578CE5AD7EE21B5D309CE7BA092FF4FE0C5EEC24B8CEDB9378B48FD836
+        2FCFE3DD1E42BB3C3B93973B08ACF2E6641E6F97DFE4C5E93CDF2CBBC87B2BB8
+        A0516E8DC7D670439BCC164FADE28A26E9251E5AC71D2D923B3CB3924B1AA456
+        78642DB7D44B6CF0C46AAEA976BEC003EBB9A7D6E9BCF53B7051A5B371CBF7E0
+        A63A27D35657B3061FAB5953E778DAE61A361C10A8614395AE0D4D270816335E
+        E370D6DA3266B3C40B19AE70346A6911A331668A182D773069650183050C1630
+        58EE7DD2C63873850CC7992BD6DCD054050BC28C957A9BB32ECA541D3B820C95
+        FA39675B90A17AF6C49829D4D2D04813AB62CC94F9316555889156B645982853
+        DFD0443BFB224C14791DB228C0401756469828F132634D80814E2C0D3050A2AE
+        A17C3FF6E6C917F83E62499E7C4F36678917A86928DE97DD59E271DF26ACC812
+        EFCDF61CE9B8F286D2FDD99F231DF677C0821CE911BC90211C56DA5078084FE4
+        48477DE58D67080FE2910CE1A8AD1A0E39E2336E3843781CEFA4C9061535941D
+        C94B49A241250D4587F2549A6C8CB4D1B46774306F2589C614347C2687F35A92
+        6848BCE133389EE79244439E6183498FE00CDE4B910C09377CE4A6F0609268C4
+        236B2CE9919EC38B299211D1868FF0249E4C918CD8B161DF7B820D1FD9693C9A
+        2219F0276A28E5199EC6AB098201B186CFEC3C9E4D100CD8B361CF93FE898646
+        126427F2708260DEA60DF347C9E55DB661F8A84843D1A93C9D2098B56BC37E57
+        FDEAF86FAB2B6F9F93CB0A34949CCCE3E7E4B2EE861F2467F3FA39B99CBBE107
+        C9D9BC7E4E2E27DF50703ACF9F93CBF9071A66094EE7F9737239D20982F379FF
+        94588E7482604F364FB1E8BFA1D5132CFBBFD4EEE1424F3D4FEACDF2C1622F3D
+        0EEACFF6A1820F3D6203583F50F49D676E00FB87093F2338800706F1C8D28643
+        2B7A6271C381153DF0C18704C131BCD19DF57FF892203888473AB3FCC1A704C1
+        51BCD295D54FEBFF7EE8998E2C6683BF017BA71B6B3F05FE7621398E773AB1F4
+        CB0E0DBB56B4F2AF2D1A76AC68E1377B34EC56D1BAEF3669D8A9A2652F020DAF
+        53D1AA571F5FFD7C4E74308F35B0E8877D1A3657B4E6A78D1A3656B4E44DA4E1
+        252A5AF16EAB860D152D38F0E727A173CFE80C1E2C66FC48A8E1F6150D1FDAAD
+        615545A3C7620DF7AE68F0C4E367C9844776124F86193B136CB8714543A7766C
+        5854D1C8B968C35D2B1A487846C4531EB9693C9A259E126EB86545E1A45D1BF6
+        3B49CA48D233398D571304330A1AEE56512CE733672A49741ACF9E10CA2A69B8
+        554591BCA2861B551408F88A9A4C939DC7BB6FFC1C51D670978A7E0CF91B369C
+        213C8F775FF829A6B4E10E15FD10F42D6E3E477A1EEF7EF139AABCE1EA8A3E86
+        7D1FB0224B7C1EEF3EF81457D37065451F0ABC8CD892273F8F776B1EAE6BB8AA
+        A27F28F23AF4DC1361609EEA476B1BAEA8E80F857E8C393FC4C8EE7EDEE9FA10
+        239B6B69788D8E6F47BA3DC8D0CEDE6F747B94A97D3537DCBEE3C17D0E2F6070
+        4F47D7B9BB84C91D1DDEE6EC3266B7D3AFE107E37B39BECAC5152CD8C8C949EE
+        AD64C91ECEAE716B23CB963A3DC28D6DEC5AEAFC084736B16AA97FB9618F8A36
+        2D953AC2990D2C5A2A79843BEBD9B354FA088756B366A9DC114EAD64C952D923
+        DC5AC78EA5F24738B68A154B058E706D0D1B968A1CE1DC0A162C153BC2C1C58C
+        2F153CC2C5A54C2F153DC2C9850C2F153FC2D1458C2E557084AB4B985CAAE808
+        77C7995BAAEC088787195BAAF408A707195AAAFC08C7871859AAE608E7071858
+        AAEE0805B2C497AA3D42850CE1A5EA8F50224974A9A623F43827B754E3119A9C
+        915AAAFD08650E892CD5E70885DEF879A97E4728F5C24F4B753E42B34FBE2E35
+        EA88FF7FC37DDC0DAFEF6E787D77C3EBBB1B5EDFDDF0FAEE86D77737BCBEBBE1
+        F5DD0DAFEEF7EFFF00A4528CD0BFE489800000000049454E44AE426082
+      }
+      StateClick.Picture.Scale = 0.0599999986588955
+      StateClick.Picture.Opacity = 255
+      StateClick.Picture.Locate = jplCenter
+      StateClick.Picture.DistanceToText = 2
+      StateClick.Rounding.RoundX = 8
+      StateClick.Rounding.RoundY = 8
+      StateClick.Rounding.Options = [rrTopLeftSquare, rrTopRightSquare, rrBottomRightSquare, rrBottomLeftSquare]
+      OnClick = JixButton3Click
+    end
+    object JixPanel4: TJixPanel
+      Left = 184
+      Height = 90
+      Top = 22
+      Width = 120
+      ThemeName = 'Default'
+      StateNormal.Border.ExColor = 2298344
+      StateNormal.Border.ExOpacity = 100
+      StateNormal.Border.InColor = 2298344
+      StateNormal.Border.InOpacity = 100
+      StateNormal.Background.Color = 2298344
+      StateNormal.Background.Opacity = 100
+      StateNormal.Background.Style = jbgsClear
+      StateNormal.Background.Point1.Color = 2298344
+      StateNormal.Background.Point1.Opacity = 255
+      StateNormal.Background.Point2.Color = 2298344
+      StateNormal.Background.Point2.Opacity = 0
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.Name = 'default'
+      StateNormal.Picture.Scale = 1
+      StateNormal.Picture.Opacity = 255
+      StateNormal.Picture.Locate = jplCenter
+      StateNormal.Picture.DistanceToText = 2
+      StateNormal.Rounding.RoundX = 8
+      StateNormal.Rounding.RoundY = 8
+      StateNormal.Rounding.Options = [rrTopRightSquare, rrBottomRightSquare]
+      IgnoreTempStyle = True
+      Anchors = []
+      object JixEditT: TJixEdit
+        Left = 36
+        Height = 21
+        Top = 9
+        Width = 50
+        ThemeName = 'Default'
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 100
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsColor
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 0
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        TextHint = 'Pad Top'
+        OnChange = JixCheckBox1Change
+        MaxLength = 0
+      end
+      object JixEditL: TJixEdit
+        AnchorSideTop.Control = JixEditT
+        AnchorSideTop.Side = asrBottom
+        Left = 8
+        Height = 21
+        Top = 35
+        Width = 50
+        ThemeName = 'Default'
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 100
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsColor
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 0
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        TextHint = 'Pad Left'
+        OnChange = JixCheckBox1Change
+        MaxLength = 0
+        BorderSpacing.Top = 5
+      end
+      object JixEditR: TJixEdit
+        AnchorSideTop.Control = JixEditT
+        AnchorSideTop.Side = asrBottom
+        Left = 64
+        Height = 21
+        Top = 35
+        Width = 50
+        ThemeName = 'Default'
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 100
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsColor
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 0
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        TextHint = 'Pad Right'
+        OnChange = JixCheckBox1Change
+        MaxLength = 0
+        BorderSpacing.Top = 5
+      end
+      object JixEditB: TJixEdit
+        AnchorSideTop.Control = JixEditL
+        AnchorSideTop.Side = asrBottom
+        Left = 36
+        Height = 21
+        Top = 61
+        Width = 50
+        ThemeName = 'Default'
+        StateNormal.Border.ExColor = 2298344
+        StateNormal.Border.ExOpacity = 100
+        StateNormal.Border.InColor = 2298344
+        StateNormal.Border.InOpacity = 100
+        StateNormal.Background.Color = 2298344
+        StateNormal.Background.Opacity = 100
+        StateNormal.Background.Style = jbgsColor
+        StateNormal.Background.Point1.Color = 2298344
+        StateNormal.Background.Point1.Opacity = 255
+        StateNormal.Background.Point2.Color = 2298344
+        StateNormal.Background.Point2.Opacity = 0
+        StateNormal.FontEx.Color = clWhite
+        StateNormal.FontEx.Name = 'default'
+        StateNormal.Picture.Scale = 1
+        StateNormal.Picture.Opacity = 255
+        StateNormal.Picture.Locate = jplCenter
+        StateNormal.Picture.DistanceToText = 2
+        StateNormal.Rounding.RoundX = 8
+        StateNormal.Rounding.RoundY = 8
+        StateNormal.Rounding.Options = []
+        TextHint = 'Pad Bottom'
+        OnChange = JixCheckBox1Change
+        MaxLength = 0
+        BorderSpacing.Top = 5
+      end
+    end
+  end
+end

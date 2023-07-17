@@ -1,0 +1,17 @@
+{"version":1,"strings":[
+{"hash":83390466,"name":"tformfonteditor.caption","sourcebytes":[70,111,110,116,32,69,100,105,116,111,114],"value":"Font Editor"},
+{"hash":126668695,"name":"tformfonteditor.jixbutton1.caption","sourcebytes":[80,114,101,118,105,101,119],"value":"Preview"},
+{"hash":262943381,"name":"tformfonteditor.jixbutcolorp1.tooltip","sourcebytes":[69,118,101,110,32,105,102,32,121,111,117,32,99,104,97,110,103,101,32,105,116,44,32,105,116,32,112,114,111,98,97,98,108,121,32,119,111,110,39,116,32,98,101,32,97,112,112,108,105,101,100,32,98,101,99,97,117,115,101,32,111,102,32,116,104,101,32,116,104,101,109,101],"value":"Even if you change it, it probably won't be applied because of the theme"},
+{"hash":12558,"name":"tformfonteditor.jixbutcolorp1.caption","sourcebytes":[46,46,46],"value":"..."},
+{"hash":262943381,"name":"tformfonteditor.jixbutcolorp2.tooltip","sourcebytes":[69,118,101,110,32,105,102,32,121,111,117,32,99,104,97,110,103,101,32,105,116,44,32,105,116,32,112,114,111,98,97,98,108,121,32,119,111,110,39,116,32,98,101,32,97,112,112,108,105,101,100,32,98,101,99,97,117,115,101,32,111,102,32,116,104,101,32,116,104,101,109,101],"value":"Even if you change it, it probably won't be applied because of the theme"},
+{"hash":12558,"name":"tformfonteditor.jixbutcolorp2.caption","sourcebytes":[46,46,46],"value":"..."},
+{"hash":5902474,"name":"tformfonteditor.label1.caption","sourcebytes":[83,105,122,101,58],"value":"Size:"},
+{"hash":78001754,"name":"tformfonteditor.label2.caption","sourcebytes":[67,111,108,111,114,58],"value":"Color:"},
+{"hash":234706490,"name":"tformfonteditor.label3.caption","sourcebytes":[68,105,115,97,98,108,101,100,32,67,111,108,111,114,58],"value":"Disabled Color:"},
+{"hash":5538698,"name":"tformfonteditor.label4.caption","sourcebytes":[78,97,109,101,58],"value":"Name:"},
+{"hash":300580,"name":"tformfonteditor.jixcheckbox1.caption","sourcebytes":[66,111,108,100],"value":"Bold"},
+{"hash":84574963,"name":"tformfonteditor.jixcheckbox2.caption","sourcebytes":[73,116,97,108,105,99],"value":"Italic"},
+{"hash":180974597,"name":"tformfonteditor.jixcheckbox3.caption","sourcebytes":[85,110,100,101,114,108,105,110,101],"value":"Underline"},
+{"hash":151116916,"name":"tformfonteditor.jixcheckbox4.caption","sourcebytes":[83,116,114,105,107,101,79,117,116],"value":"StrikeOut"},
+{"hash":366789,"name":"tformfonteditor.jixbutton2.caption","sourcebytes":[83,97,118,101],"value":"Save"}
+]}
