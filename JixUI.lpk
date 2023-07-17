@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="JixUI"/>
+    <Type Value="RunAndDesignTime"/>
+    <AddToProjectUsesSection Value="True"/>
+    <Author Value="Alforce | Jixoid@gmail.com"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="Dependencies\BGRAEngine;Dependencies\BGRAControls;Dependencies\BGRAControls\bgrasvgimagelistform;Dependencies\mbColorLib;JixDialogs;Components;Components\JixComboBox;Components\JixCheckBox;Components\JixRadioButton;Components\JixButton;Components\JixPanel;Components\JixPanelEx;Components\JixProgressBar;Components\JixPaintBox;Components\JixProgressBarEx;Components\JixPaintBoxWin;Components\JixScrollBar;Components\JixFillBar;Components\JixLabel;Dialogs\TextAsk;Dialogs\QuestAsk;Dialogs\TimeAsk;Dialogs\DateAsk;Dialogs\IntAsk;Components\JixEdit;Components\JixScrollBox;Components\JixScrollBarWin;Components\JixList;Components\JixMemo;Components\JixTemplate;Components\JixTabs;Components\JixSplit;Components\JixJRTTMEditor;CompsInh\JixPropertyEditor;CompsInh\JixTreeView;Components\JixSyn;Highliter\JixSynPas;Highliter\JixSynAny;Highliter\JixSynCSharp;Forms;Forms\Editors;Studio"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)-$(FPCVer)"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <AllowLabel Value="False"/>
+          <CStyleMacros Value="True"/>
+        </SyntaxOptions>
+      </Parsing>
+      <CodeGeneration>
+        <Optimizations>
+          <OptimizationLevel Value="4"/>
+        </Optimizations>
+      </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <GenerateDebugInfo Value="False"/>
+        </Debugging>
+      </Linking>
+      <Other>
+        <WriteFPCLogo Value="False"/>
+        <CompilerMessages>
+          <IgnoredMessages idx4035="True" idx4079="True"/>
+        </CompilerMessages>
+      </Other>
+    </CompilerOptions>
+    <Description Value="Included package &quot;BGRABitmapPack 11.5.4&quot; in \Dependencies\BGRAEngine for independence Included package &quot;BGRAControls 7.7&quot; in \Dependencies\BGRAControls for independence Included package &quot;mbColorLibLaz 2.2.1&quot; in \Dependencies\mbColor for independence"/>
+    <License Value="ClosedSource, Only compiled files.  Thanks to Circular for BGRABitmapPack, Thanks to Dibo, Circular and Lainz for BGRAControls, Thanks to Marko Binić and Werner Pamler for mbColorLibLaz, And to those who contributed to these packages."/>
+    <Version Build="1" Major="4" Minor="9" Release="6"/>
+    <Files>
+      <Item>
+        <Filename Value="JixUIManager.pas"/>
+        <UnitName Value="JixUIManager"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Application.pas"/>
+        <UnitName Value="JCL.Application"/>
+      </Item>
+      <Item>
+        <Filename Value="Dependencies\BGRAEngine\bgrabitmappack.pas"/>
+        <UnitName Value="BGRABitmapPack"/>
+      </Item>
+      <Item>
+        <Filename Value="Dependencies\BGRAControls\bgracontrols.pas"/>
+        <UnitName Value="bgracontrols"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.CompTypes.pas"/>
+        <UnitName Value="JCL.CompTypes"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixTemplate\JCL.Comps.Template.pas"/>
+        <UnitName Value="JCL.Comps.Template"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Controls.pas"/>
+        <UnitName Value="JCL.Controls"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.ControlsEx.pas"/>
+        <UnitName Value="JCL.ControlsEx"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Forms.pas"/>
+        <UnitName Value="JCL.Forms"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Theme.pas"/>
+        <UnitName Value="JCL.Theme"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Utils.pas"/>
+        <UnitName Value="JCL.Utils"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Auxiliary.pas"/>
+        <UnitName Value="JCL.Auxiliary"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Generics.pas"/>
+        <UnitName Value="JCL.Generics"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.RTPM.pas"/>
+        <UnitName Value="JCL.RTPM"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Jedab.pas"/>
+        <UnitName Value="JCL.Jedab"/>
+      </Item>
+      <Item>
+        <Filename Value="JCL.Dialogs.pas"/>
+        <UnitName Value="JCL.Dialogs"/>
+      </Item>
+      <Item>
+        <Filename Value="JixDialogs\CustomError.pas"/>
+        <UnitName Value="CustomError"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixButton\JCL.Comps.Button.pas"/>
+        <UnitName Value="JCL.Comps.Button"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixLabel\JCL.Comps.StaticLabel.pas"/>
+        <UnitName Value="JCL.Comps.StaticLabel"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixEdit\JCL.Comps.Edit.pas"/>
+        <UnitName Value="JCL.Comps.Edit"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixMemo\JCL.Comps.Memo.pas"/>
+        <UnitName Value="JCL.Comps.Memo"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixComboBox\JCL.Comps.ComboBox.pas"/>
+        <UnitName Value="JCL.Comps.ComboBox"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixPanel\JCL.Comps.Panel.pas"/>
+        <UnitName Value="JCL.Comps.Panel"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixPanelEx\JCL.Comps.PanelEx.pas"/>
+        <UnitName Value="JCL.Comps.PanelEx"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixScrollBox\JCL.Comps.ScrollBox.pas"/>
+        <UnitName Value="JCL.Comps.ScrollBox"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixList\JCL.Comps.List.pas"/>
+        <UnitName Value="JCL.Comps.List"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixCheckBox\JCL.Comps.CheckBox.pas"/>
+        <UnitName Value="JCL.Comps.CheckBox"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixRadioButton\JCL.Comps.RadioButton.pas"/>
+        <UnitName Value="JCL.Comps.RadioButton"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixProgressBar\JCL.Comps.ProgressBar.pas"/>
+        <UnitName Value="JCL.Comps.ProgressBar"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixProgressBarEx\JCL.Comps.ProgressBarEx.pas"/>
+        <UnitName Value="JCL.Comps.ProgressBarEx"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixTabs\JCL.Comps.Tabs.pas"/>
+        <UnitName Value="JCL.Comps.Tabs"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixFillBar\JCL.Comps.FillBar.pas"/>
+        <UnitName Value="JCL.Comps.FillBar"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixScrollBar\JCL.Comps.ScrollBar.pas"/>
+        <UnitName Value="JCL.Comps.ScrollBar"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixScrollBarWin\JCL.Comps.ScrollBarWin.pas"/>
+        <UnitName Value="JCL.Comps.ScrollBarWin"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixSplit\JCL.Comps.Spilt.pas"/>
+        <UnitName Value="JCL.Comps.Spilt"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixPaintBox\JCL.Comps.PaintBox.pas"/>
+        <UnitName Value="JCL.Comps.PaintBox"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixPaintBoxWin\JCL.Comps.PaintBoxWin.pas"/>
+        <UnitName Value="JCL.Comps.PaintBoxWin"/>
+      </Item>
+      <Item>
+        <Filename Value="CompsInh\JixPropertyEditor\JCL.Comps.PropertyEditor.pas"/>
+        <UnitName Value="JCL.Comps.PropertyEditor"/>
+      </Item>
+      <Item>
+        <Filename Value="CompsInh\JixTreeView\JCL.Comps.TreeView.pas"/>
+        <UnitName Value="JCL.Comps.TreeView"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixJRTTMEditor\JCL.Comps.RTTMEditor.pas"/>
+        <UnitName Value="JCL.Comps.RTTMEditor"/>
+      </Item>
+      <Item>
+        <Filename Value="Components\JixSyn\JCL.Comps.Syn.pas"/>
+        <UnitName Value="JCL.Comps.Syn"/>
+      </Item>
+      <Item>
+        <Filename Value="Highliter\JixSynAny\JCL.Comps.Syn.Any.pas"/>
+        <UnitName Value="JCL.Comps.Syn.Any"/>
+      </Item>
+      <Item>
+        <Filename Value="Highliter\JixSynPas\JCL.Comps.Syn.Pas.pas"/>
+        <UnitName Value="JCL.Comps.Syn.Pas"/>
+      </Item>
+      <Item>
+        <Filename Value="Highliter\JixSynCSharp\JCL.Comps.Syn.CSharp.pas"/>
+        <UnitName Value="JCL.Comps.Syn.CSharp"/>
+      </Item>
+      <Item>
+        <Filename Value="Dialogs\TextAsk\JCL.Dialogs.TextAsk.pas"/>
+        <UnitName Value="JCL.Dialogs.TextAsk"/>
+      </Item>
+      <Item>
+        <Filename Value="Dialogs\IntAsk\JCL.Dialogs.IntAsk.pas"/>
+        <UnitName Value="JCL.Dialogs.IntAsk"/>
+      </Item>
+      <Item>
+        <Filename Value="Dialogs\QuestAsk\JCL.Dialogs.QuestAsk.pas"/>
+        <UnitName Value="JCL.Dialogs.QuestAsk"/>
+      </Item>
+      <Item>
+        <Filename Value="Dialogs\TimeAsk\JCL.Dialogs.TimeAsk.pas"/>
+        <UnitName Value="JCL.Dialogs.TimeAsk"/>
+      </Item>
+      <Item>
+        <Filename Value="Dialogs\DateAsk\JCL.Dialogs.DateAsk.pas"/>
+        <UnitName Value="JCL.Dialogs.DateAsk"/>
+      </Item>
+      <Item>
+        <Filename Value="Forms\Editors\UnitBackgroundEditor.pas"/>
+        <UnitName Value="UnitBackgroundEditor"/>
+      </Item>
+      <Item>
+        <Filename Value="Forms\Editors\UnitBorderEditor.pas"/>
+        <UnitName Value="UnitBorderEditor"/>
+      </Item>
+      <Item>
+        <Filename Value="Forms\Editors\UnitFontEditor.pas"/>
+        <UnitName Value="UnitFontEditor"/>
+      </Item>
+      <Item>
+        <Filename Value="Forms\Editors\UnitRoundingEditor.pas"/>
+        <UnitName Value="UnitRoundingEditor"/>
+      </Item>
+      <Item>
+        <Filename Value="Forms\Editors\UnitThemeNameEditor.pas"/>
+        <UnitName Value="UnitThemeNameEditor"/>
+      </Item>
+      <Item>
+        <Filename Value="JixUIRegister.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="JixUIRegister"/>
+      </Item>
+      <Item>
+        <Filename Value="Forms\UnitJixStartUp.pas"/>
+        <UnitName Value="UnitJixStartUp"/>
+      </Item>
+      <Item>
+        <Filename Value="Studio\JCL.Studio.Utils.pas"/>
+        <UnitName Value="JCL.Studio.Utils"/>
+      </Item>
+    </Files>
+    <i18n>
+      <EnableI18N Value="True"/>
+      <OutDir Value="Languages"/>
+      <EnableI18NForLFM Value="True"/>
+    </i18n>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="IDEIntf"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCLBase"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <AutoUpdate Value="Manually"/>
+  </Package>
+</CONFIG>
