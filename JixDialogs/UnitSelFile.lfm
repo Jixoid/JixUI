@@ -1,0 +1,13 @@
+object FormSelFile: TFormSelFile
+  Left = 288
+  Height = 300
+  Top = 32
+  Width = 500
+  BorderIcons = [biSystemMenu]
+  Caption = 'Select File'
+  Color = clBlack
+  Font.CharSet = TURKISH_CHARSET
+  Font.Color = clWhite
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+end

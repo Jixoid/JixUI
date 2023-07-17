@@ -1,0 +1,12 @@
+{"version":1,"strings":[
+{"hash":372789,"name":"tformdialogtime.caption","sourcebytes":[84,105,109,101],"value":"Time"},
+{"hash":171732613,"name":"tformdialogtime.bclabelcaption.caption","sourcebytes":[83,101,108,101,99,116,32,84,105,109,101],"value":"Select Time"},
+{"hash":120,"name":"tformdialogtime.bcbuthalt.caption","sourcebytes":[120],"value":"x"},
+{"hash":912,"name":"tformdialogtime.edit1.text","sourcebytes":[54,48],"value":"60"},
+{"hash":912,"name":"tformdialogtime.edit2.text","sourcebytes":[54,48],"value":"60"},
+{"hash":43,"name":"tformdialogtime.bcbutmadd.caption","sourcebytes":[43],"value":"+"},
+{"hash":43,"name":"tformdialogtime.bcbutsadd.caption","sourcebytes":[43],"value":"+"},
+{"hash":45,"name":"tformdialogtime.bcbutmminus.caption","sourcebytes":[45],"value":"-"},
+{"hash":45,"name":"tformdialogtime.bcbutsminus.caption","sourcebytes":[45],"value":"-"},
+{"hash":1339,"name":"tformdialogtime.bcbutok.caption","sourcebytes":[79,75],"value":"OK"}
+]}
