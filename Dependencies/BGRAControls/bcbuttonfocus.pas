@@ -1,0 +1,381 @@
+// SPDX-License-Identifier: LGPL-3.0-linking-exception
+{ Customizable component which using BGRABitmap for drawing. Control mostly rendered
+  using framework.
+
+  Functionality:
+  - Gradients
+  - Double gradients
+  - Rounding
+  - Drop down list
+  - Glyph
+  - States (normal, hover, clicked)
+  - Caption with shadow
+  - Full alpha and antialias support
+
+  originally written in 2012 by Krzysztof Dibowski dibowski at interia.pl
+}
+{******************************* CONTRIBUTOR(S) ******************************
+- Edivando S. Santos Brasil | mailedivando@gmail.com
+  (Compatibility with delphi VCL 11/2018)
+
+***************************** END CONTRIBUTOR(S) *****************************}
+unit BCButtonFocus;
+
+{$I bgracontrols.map.inc}
+
+interface
+
+uses
+  Classes, {$IFDEF FPC}LCLType, LResources, LMessages,{$ENDIF} Controls, Dialogs,
+  ActnList, ImgList, Menus, // MORA
+  Buttons, Graphics, types,
+  {$IFNDEF FPC}Windows, Messages, BGRAGraphics, GraphType, FPImage, {$ENDIF}
+  BGRABitmap, BGRABitmapTypes, BCTypes, Forms, BCBasectrls, BCThemeManager;
+
+{off $DEFINE DEBUG}
+
+type
+  TBCButtonFocusMemoryUsage = (bmuLowF, bmuMediumF, bmuHighF);
+  TBCButtonFocusState = class;
+  TBCButtonFocusStyle = (bbtButtonF, bbtDropDownF);
+  TOnAfterRenderBCButtonFocus = procedure(Sender: TObject; const ABGRA: TBGRABitmap;
+    AState: TBCButtonFocusState; ARect: TRect) of object;
+  TBCButtonFocusPropertyData = (pdNoneF, pdUpdateSizeF);
+
+  // MORA: DropDown styles
+  TBCButtonFocusDropDownStyle = (
+    bdsSeparateF,     // DropDown is a separate button (default)
+    bdsCommonF        // DropDown is same as main button
+    );
+  TBCButtonFocusDropDownPosition = (
+    bdpLeftF,         // default
+    bdpBottomF);
+
+  { TBCButtonFocusState }
+
+  TBCButtonFocusState = class(TBCProperty)
+  private
+    FBackground: TBCBackground;
+    FBorder: TBCBorder;
+    FFontEx: TBCFont;
+    procedure OnChangeFont({%H-}Sender: TObject; {%H-}AData: PtrInt);
+    procedure OnChangeChildProperty({%H-}Sender: TObject; AData: PtrInt);
+    procedure SetBackground(AValue: TBCBackground);
+    procedure SetBorder(AValue: TBCBorder);
+    procedure SetFontEx(const AValue: TBCFont);
+  public
+    constructor Create(AControl: TControl); override;
+    destructor Destroy; override;
+
+    procedure Assign(Source: TPersistent); override;
+  published
+    property Background: TBCBackground read FBackground write SetBackground;
+    property Border: TBCBorder read FBorder write SetBorder;
+    property FontEx: TBCFont read FFontEx write SetFontEx;
+  end;
+
+  { TCustomBCButtonFocus }
+
+  TCustomBCButtonFocus = class(TBCStyleCustomControl)
+  private
+    { Private declarations }
+    {$IFDEF INDEBUG}
+    FRenderCount: integer;
+    {$ENDIF}
+    FDropDownArrowSize: integer;
+    FDropDownWidth: integer;
+    FFlipArrow: boolean;
+    FActiveButt: TBCButtonFocusStyle;
+    FBGRANormal, FBGRAHover, FBGRAClick: TBGRABitmapEx;
+    FGlyphAlignment: TBCAlignment;
+    FGlyphOldPlacement: boolean;
+    FInnerMargin: single;
+    FMemoryUsage: TBCButtonFocusMemoryUsage;
+    FOnPaintButton: TNotifyEvent;
+    FPreserveGlyphOnAssign: boolean;
+    FRounding: TBCRounding;
+    FRoundingDropDown: TBCRounding;
+    FStateClicked: TBCButtonFocusState;
+    FStateHover: TBCButtonFocusState;
+    FStateNormal: TBCButtonFocusState;
+    FDown: boolean;
+    FGlyph: TBitmap;
+    FGlyphMargin: integer;
+    FButtonState: TBCMouseState;
+    FDownButtonState: TBCMouseState;
+    FOnAfterRenderBCButton: TOnAfterRenderBCButtonFocus;
+    FOnButtonClick: TNotifyEvent;
+    FStaticButton: boolean;
+    FStyle: TBCButtonFocusStyle;
+    FGlobalOpacity: byte;
+    FTextApplyGlobalOpacity: boolean;
+    AutoSizeExtraY: integer;
+    AutoSizeExtraX: integer;
+    FLastBorderWidth: integer;
+    // MORA
+    FClickOffset: boolean;
+    FDropDownArrow: boolean;
+    FDropDownMenu: TPopupMenu;
+    FDropDownMenuVisible: boolean;
+    FDropDownClosingTime: TDateTime;
+    FDropDownPosition: TBCButtonFocusDropDownPosition;
+    FDropDownStyle: TBCButtonFocusDropDownStyle;
+    FImageChangeLink: TChangeLink;
+    FImageIndex: integer;
+    FImages: TCustomImageList;
+    FSaveDropDownClosed: TNotifyEvent;
+    FShowCaption: boolean;
+    procedure AssignDefaultStyle;
+    procedure CalculateGlyphSize(out NeededWidth, NeededHeight: integer);
+    procedure DropDownClosed(Sender: TObject);
+    procedure RenderAll(ANow: boolean = False);
+    function GetButtonRect: TRect;
+    function GetDropDownWidth(AFull: boolean = True): integer;
+    function GetDropDownRect(AFull: boolean = True): TRect;
+    procedure SeTBCButtonStateClicked(const AValue: TBCButtonFocusState);
+    procedure SeTBCButtonStateHover(const AValue: TBCButtonFocusState);
+    procedure SeTBCButtonStateNormal(const AValue: TBCButtonFocusState);
+    procedure SetClickOffset(AValue: boolean);
+    procedure SetDown(AValue: boolean);
+    procedure SetDropDownArrow(AValue: boolean);
+    procedure SetDropDownArrowSize(AValue: integer);
+    procedure SetDropDownPosition(AValue: TBCButtonFocusDropDownPosition);
+    procedure SetDropDownWidth(AValue: integer);
+    procedure SetFlipArrow(AValue: boolean);
+    procedure SetGlyph(const AValue: TBitmap);
+    procedure SetGlyphAlignment(AValue: TBCAlignment);
+    procedure SetGlyphMargin(const AValue: integer);
+    procedure SetGlyphOldPlacement(AValue: boolean);
+    procedure SetImageIndex(AValue: integer);
+    procedure SetImages(AValue: TCustomImageList);
+    procedure SetInnerMargin(AValue: single);
+    procedure SetMemoryUsage(AValue: TBCButtonFocusMemoryUsage);
+    procedure SetRounding(AValue: TBCRounding);
+    procedure SetRoundingDropDown(AValue: TBCRounding);
+    procedure SetShowCaption(AValue: boolean);
+    procedure SetStaticButton(const AValue: boolean);
+    procedure SetStyle(const AValue: TBCButtonFocusStyle);
+    procedure SetGlobalOpacity(const AValue: byte);
+    procedure SetTextApplyGlobalOpacity(const AValue: boolean);
+    procedure UpdateSize;
+    procedure OnChangeGlyph({%H-}Sender: TObject);
+    procedure OnChangeState({%H-}Sender: TObject; AData: PtrInt);
+    procedure ImageListChange(ASender: TObject);
+    function GetGlyph: TBitmap;
+  protected
+    { Protected declarations }
+    procedure LimitMemoryUsage;
+    procedure CalculatePreferredSize(var PreferredWidth, PreferredHeight: integer;
+      {%H-}WithThemeSpace: boolean); override;
+    class function GetControlClassDefaultSize: TSize; override;
+    procedure Click; override;
+    procedure MouseDown(Button: TMouseButton; Shift: TShiftState;
+      X, Y: integer); override;
+    procedure MouseUp(Button: TMouseButton; Shift: TShiftState; X, Y: integer); override;
+    procedure MouseEnter; override;
+    procedure MouseLeave; override;
+    procedure MouseMove(Shift: TShiftState; X, Y: integer); override;
+    procedure SetEnabled(Value: boolean); override;
+    procedure TextChanged; override;
+    procedure KeyDown(var Key: word; Shift: TShiftState); override;
+    procedure KeyUp(var Key: word; Shift: TShiftState); override;
+  protected
+    // MORA
+    procedure ActionChange(Sender: TObject; CheckDefaults: boolean); override;
+    function GetActionLinkClass: TControlActionLinkClass; override;
+    procedure Notification(AComponent: TComponent; Operation: TOperation);
+      override;
+    procedure Render(ABGRA: TBGRABitmapEx; AState: TBCButtonFocusState); virtual;
+    procedure RenderState(ABGRA: TBGRABitmapEx; AState: TBCButtonFocusState;
+      const ARect: TRect; ARounding: TBCRounding); virtual;
+    property ClickOffset: boolean read FClickOffset write SetClickOffset default False;
+    property DropDownArrow: boolean
+      read FDropDownArrow write SetDropDownArrow default False;
+    property DropDownMenu: TPopupMenu read FDropDownMenu write FDropDownMenu;
+    property DropDownStyle: TBCButtonFocusDropDownStyle
+      read FDropDownStyle write FDropDownStyle default bdsSeparateF;
+    property DropDownPosition: TBCButtonFocusDropDownPosition
+      read FDropDownPosition write SetDropDownPosition default bdpLeftF;
+    property Images: TCustomImageList read FImages write SetImages;
+    property ImageIndex: integer read FImageIndex write SetImageIndex default -1;
+    property ShowCaption: boolean read FShowCaption write SetShowCaption default True;
+  protected
+    {$IFDEF INDEBUG}
+    function GetDebugText: string; override;
+    {$ENDIF}
+    function GetStyleExtension: string; override;
+    procedure DrawControl; override;
+    procedure RenderControl; override;
+  protected
+    procedure WMSetFocus(var Message: {$IFDEF FPC}TLMSetFocus{$ELSE}TWMSetFocus{$ENDIF}); message {$IFDEF FPC}LM_SETFOCUS{$ELSE}WM_SETFOCUS{$ENDIF};
+    procedure WMKillFocus(var Message: {$IFDEF FPC}TLMKillFocus{$ELSE}TWMKillFocus{$ENDIF}); message {$IFDEF FPC}LM_KILLFOCUS{$ELSE}WM_KILLFOCUS{$ENDIF};
+    procedure UpdateFocus(AFocused: boolean);
+    property AutoSizeExtraVertical: integer read AutoSizeExtraY;
+    property AutoSizeExtraHorizontal: integer read AutoSizeExtraX;
+    property StateNormal: TBCButtonFocusState read FStateNormal write SeTBCButtonStateNormal;
+    property StateHover: TBCButtonFocusState read FStateHover write SeTBCButtonStateHover;
+    property StateClicked: TBCButtonFocusState read FStateClicked
+      write SeTBCButtonStateClicked;
+    property Down: boolean read FDown write SetDown default False;
+    property DropDownWidth: integer read FDropDownWidth write SetDropDownWidth;
+    property DropDownArrowSize: integer read FDropDownArrowSize
+      write SetDropDownArrowSize;
+    property FlipArrow: boolean read FFlipArrow write SetFlipArrow default False;
+    property Glyph: TBitmap read GetGlyph write SetGlyph;
+    property GlyphMargin: integer read FGlyphMargin write SetGlyphMargin default 5;
+    property GlyphAlignment: TBCAlignment read FGlyphAlignment write SetGlyphAlignment default bcaCenter;
+    property GlyphOldPlacement: boolean read FGlyphOldPlacement write SetGlyphOldPlacement default true;
+    property Style: TBCButtonFocusStyle read FStyle write SetStyle default bbtButtonF;
+    property StaticButton: boolean
+      read FStaticButton write SetStaticButton default False;
+    property GlobalOpacity: byte read FGlobalOpacity write SetGlobalOpacity;
+    property Rounding: TBCRounding read FRounding write SetRounding;
+    property RoundingDropDown: TBCRounding read FRoundingDropDown
+      write SetRoundingDropDown;
+    property TextApplyGlobalOpacity: boolean
+      read FTextApplyGlobalOpacity write SetTextApplyGlobalOpacity;
+    property OnAfterRenderBCButton: TOnAfterRenderBCButtonFocus
+      read FOnAfterRenderBCButton write FOnAfterRenderBCButton;
+    property OnButtonClick: TNotifyEvent read FOnButtonClick write FOnButtonClick;
+    property MemoryUsage: TBCButtonFocusMemoryUsage read FMemoryUsage write SetMemoryUsage;
+    property InnerMargin: single read FInnerMargin write SetInnerMargin;
+    property OnPaintButton: TNotifyEvent read FOnPaintButton write FOnPaintButton;
+    property PreserveGlyphOnAssign: boolean read FPreserveGlyphOnAssign write FPreserveGlyphOnAssign default True;
+  public
+    { Constructor }
+    constructor Create(AOwner: TComponent); override;
+    { Destructor }
+    destructor Destroy; override;
+    { Assign the properties from Source to this instance }
+    procedure Assign(Source: TPersistent); override;
+    { Set dropdown size and autosize extra padding }
+    procedure SetSizeVariables(newDropDownWidth, newDropDownArrowSize,
+      newAutoSizeExtraVertical, newAutoSizeExtraHorizontal: integer);
+    { Called by EndUpdate }
+    procedure UpdateControl; override;
+  public
+    {$IFDEF FPC}
+    { Save all published settings to file }
+    procedure SaveToFile(AFileName: string);
+    { Load and assign all published settings from file }
+    procedure LoadFromFile(AFileName: string);
+    { Assign the properties from AFileName to this instance }
+    procedure AssignFromFile(AFileName: string);
+    {$ENDIF}
+    { Used by SaveToFile/LoadFromFile }
+    procedure OnFindClass({%H-}Reader: TReader; const AClassName: string;
+      var ComponentClass: TComponentClass);
+  end;
+
+  TBCButtonFocus = class(TCustomBCButtonFocus)
+  private
+    FBCThemeManager: TBCThemeManager;
+    procedure SetFBCThemeManager(AValue: TBCThemeManager);
+  published
+    property Action;
+    property Align;
+    property Anchors;
+    { Click to edit the style. Available when editing only. If you want to stream the style from a file at runtime please use LoadFromFile and SaveToFile methods. }
+    property AssignStyle;
+    property AutoSize;
+    { The style of the button when pressed. }
+    property StateClicked;
+    { The style of the button when hovered. }
+    property StateHover;
+    { The default style of the button. }
+    property StateNormal;
+    property BorderSpacing;
+    property Caption;
+    property Color;
+    property Constraints;
+    { Set to True to change the button to always show a StateClicked style that will not change when button is clicked or hovered. }
+    property Down;
+    { The width of the dropdown arrow area. }
+    property DropDownWidth;
+    { The size of the dropdown arrow. }
+    property DropDownArrowSize;
+    property Enabled;
+    { Changes the direction of the arrow. Default: False. }
+    property FlipArrow;
+    { Set the opacity that will be applied to the whole button. Default: 255. }
+    property GlobalOpacity;
+    { The glyph icon. }
+    property Glyph;
+    property GlyphAlignment;
+    property GlyphOldPlacement;
+    property PreserveGlyphOnAssign;
+    { The margin of the glyph icon. }
+    property GlyphMargin;
+    property Hint;
+    property InnerMargin;
+    { Called when the button finish the render. Use it to add your own drawings to the button. }
+    property OnAfterRenderBCButton;
+    { Called when the button part is clicked, not the dropdown. }
+    property OnButtonClick;
+    property OnClick;
+    property OnDblClick;
+    property OnMouseDown;
+    property OnMouseEnter;
+    property OnMouseLeave;
+    property OnMouseMove;
+    property OnMouseUp;
+    property OnMouseWheel;
+    property OnMouseWheelDown;
+    property OnMouseWheelUp;
+    property ParentColor;
+    property PopupMenu;
+    { Change the style of the rounded corners of the button. }
+    property Rounding;
+    { Change the style of the rounded corners of the dropdown part of the button. }
+    property RoundingDropDown;
+    { Set to True to change the button to always show a StateNormal style that will not change when button is clicked or hovered. }
+    property StaticButton;
+    property ShowHint;
+    { The style of button that will be used. bbtButton or bbtDropDownF. }
+    property Style;
+    { Apply the global opacity to rendered text. Default: False. }
+    property TextApplyGlobalOpacity;
+    property Visible;
+    { -ToDo: Unused property? }
+    property ClickOffset;
+    { Show the dropdown arrow. }
+    property DropDownArrow;
+    { The dropdown menu that will be displayed when the button is pressed. }
+    property DropDownMenu;
+    { The kind of dropdown that will be used. bdsSeparate will show the dropdown down the dropdown arrow side. bdsCommon will show the dropdown down the whole button. }
+    property DropDownStyle;
+    { The position of the dropdown arrow. }
+    property DropDownPosition;
+    { The image list that holds an image to be used with the button ImageIndex property. }
+    property Images;
+    { The index of the image that will be used for the button as glyph icon if glyph property is not set. }
+    property ImageIndex;
+    { Show caption or hides it. Default: True. }
+    property ShowCaption;
+    { Limit memory usage by selecting one of the options. Default: bmuHighF. }
+    property MemoryUsage;
+    { The unique name of the control in the form. }
+    property Name;
+    { TabStop }
+    property TabOrder;
+    property TabStop;
+    property ThemeManager: TBCThemeManager read FBCThemeManager write SetFBCThemeManager;
+    property OnPaintButton;
+  end;
+
+  { TBCButtonFocusActionLink }
+
+  TBCButtonFocusActionLink = class(TControlActionLink)
+  protected
+    procedure AssignClient(AClient: TObject); override;
+    procedure SetChecked(Value: boolean); override;
+    procedure SetImageIndex(Value: integer); override;
+  public
+    function IsCheckedLinked: boolean; override;
+    function IsImageIndexLinked: boolean; override;
+  end;
+
+{$IFDEF FPC}procedure Register;{$ENDIF}
+
+Implementation
+End.
