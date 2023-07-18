@@ -5,8 +5,8 @@ Türkçe =====>
 
 JixUI bir Lazarus paketidir.
 
-SSL: https://indy.fulgan.com/SSL/
-Nasıl yüklenir: Çok yakında...
+- SSL: https://indy.fulgan.com/SSL/
+- Nasıl yüklenir: Çok yakında...
 
 Bir sorun veya öneri için Jixoid@gmail.com adresinden iletişime geçebilirsiniz.
 
@@ -36,8 +36,8 @@ English =====>
 
 JixUI is a Lazarus package.
 
-SSL: https://indy.fulgan.com/SSL/
-How to install: Very soon...
+- SSL: https://indy.fulgan.com/SSL/
+- How to install: Very soon...
 
 For any issues or suggestions, you can contact us at Jixoid@gmail.com.
 
