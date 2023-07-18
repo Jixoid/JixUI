@@ -18,7 +18,7 @@ Açıklamaya başlamadan önce teşekkür etmem gereken bir takım kişiler var:
 - Ve son olarak Lazarus Forum: https://forum.lazarus.freepascal.org/index.php
 
 Daha sonrasında söylemem gereken ise bu paketleri kendi paketimin bir parçası haline getirdim, ama bunu yapmamın tek nedeni bağımlılık sorunlarını çözmekti. Yani şuan bir bağımlılığı yok.
-Bu paketlerde herhangi bir değişiklik yapmadım, bulmak isterseniz "Dependencies" klasöründe bulabilirsiniz.
+Bu paketlerde sadece biraz kırpma işlemi yaptım, bulmak isterseniz "Dependencies" klasöründe bulabilirsiniz.
 
 Tamam, açıklamaya geçebiliriz
 
@@ -49,7 +49,8 @@ Before diving into the description, I would like to express my gratitude to the 
 - mbColorLib, for the color picker: https://github.com/nglthach/mbColorLib
 - And lastly, the Lazarus Forum: https://forum.lazarus.freepascal.org/index.php
 
-Now, let me mention that I have incorporated these packages into my own package, but the sole reason for doing so was to resolve dependency issues. Currently, JixUI has no external dependencies. If you wish to find these packages, you can locate them in the "Dependencies" folder.
+What I should say next is that I made these packages part of my own package, but the only reason I did it was to solve dependency issues.  So there is no addiction at the moment.
+ I just did some trimming on these packages, if you want to find them you can find them in the "Dependencies" folder.
 
 Alright, let's move on to the description.
 
