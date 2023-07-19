@@ -26,5 +26,6 @@ uses
   BGRAFilterScanner, BGRAFilterType, BGRAFilterBlur, BGRAMultiFileType, 
   BGRAWinResource, BGRAUnicode, BGRAClasses;
 
-Implementation
-End.
+implementation
+
+end.

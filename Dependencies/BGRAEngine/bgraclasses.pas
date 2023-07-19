@@ -143,5 +143,109 @@ procedure Dec64(var AValue: int64; const ADelta: int64); overload; inline;
 procedure Inc64(var AValue: uint64; const ADelta: uint64); overload; inline;
 procedure Dec64(var AValue: uint64; const ADelta: uint64); overload; inline;
 
-Implementation
-End.
+implementation
+
+function Rect(ALeft, ATop, ARight, ABottom: Integer): TRect;
+begin
+  with Result do
+  begin
+    Left := ALeft;
+    Top := ATop;
+    Right := ARight;
+    Bottom := ABottom;
+  end;
+end;
+
+{$IFDEF BGRA_DEFINE_TRECTF}
+{ TRectF }
+
+function TRectF.GetHeight: single;
+begin
+  result := Bottom-Top;
+end;
+
+function TRectF.GetWidth: Single;
+begin
+  result := Right-Left;
+end;
+
+procedure TRectF.Offset(const dx, dy: Single);
+begin
+  left:=left+dx; right:=right+dx;
+  bottom:=bottom+dy; top:=top+dy;
+end;
+{$ENDIF}
+
+function Point(AX, AY: Integer): TPoint;
+begin
+  with Result do
+  begin
+    X := AX;
+    Y := AY;
+  end;
+end;
+
+function Size(AWidth, AHeight: Integer): TSize;
+begin
+  Result.cx := AWidth;
+  Result.cy := AHeight;
+end;
+
+procedure IncF(var ADest: single; ADelta: single);
+begin
+  ADest := ADest + ADelta;
+end;
+
+procedure IncF(var ADest: double; ADelta: double);
+begin
+  ADest := ADest + ADelta;
+end;
+
+procedure DecF(var ADest: single; ADelta: single);
+begin
+  ADest := ADest - ADelta;
+end;
+
+procedure DecF(var ADest: double; ADelta: double);
+begin
+  ADest := ADest - ADelta;
+end;
+
+procedure Inc64(var AValue: int64; const ADelta: int64);
+begin
+  {$IFDEF CPU64}
+  Inc(AValue, ADelta);
+  {$ELSE}
+  AValue := AValue + ADelta;
+  {$ENDIF}
+end;
+
+procedure Dec64(var AValue: int64; const ADelta: int64);
+begin
+  {$IFDEF CPU64}
+  Dec(AValue, ADelta);
+  {$ELSE}
+  AValue := AValue - ADelta;
+  {$ENDIF}
+end;
+
+procedure Inc64(var AValue: uint64; const ADelta: uint64);
+begin
+  {$IFDEF CPU64}
+  Inc(AValue, ADelta);
+  {$ELSE}
+  AValue := AValue + ADelta;
+  {$ENDIF}
+end;
+
+procedure Dec64(var AValue: uint64; const ADelta: uint64);
+begin
+  {$IFDEF CPU64}
+  Dec(AValue, ADelta);
+  {$ELSE}
+  AValue := AValue - ADelta;
+  {$ENDIF}
+end;
+
+end.
+

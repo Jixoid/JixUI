@@ -25,5 +25,6 @@ uses
   BGRAWriteBmpMioMap, BGRAPhoxo, BGRAFilterScanner, BGRAFilterType, 
   BGRAFilterBlur, BGRAMultiFileType, BGRAWinResource, BGRAUnicode, BGRAClasses;
 
-Implementation
-End.
+implementation
+
+end.

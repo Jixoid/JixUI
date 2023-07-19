@@ -32,5 +32,6 @@ uses
   linuxlib, BGRAReadWebP, BGRAWriteWebP, BGRAClasses, avifbgra, libavif, 
   BGRAWriteAvif, BGRAReadAvif, darwinlib;
 
-Implementation
-End.
+implementation
+
+end.
