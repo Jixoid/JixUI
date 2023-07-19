@@ -162,5 +162,425 @@ type
 var
   BGLSpriteEngine  : TBGLCustomSpriteEngine;
 
-Implementation
-End.
+implementation
+
+{ TBGLDefaultSpriteEngine }
+
+function TBGLDefaultSpriteEngine.GetSprite(AIndex: integer): TBGLCustomSprite;
+begin
+  if (AIndex < 0) or (Aindex >= Count) then
+    raise ERangeError.Create('Index out of bounds');
+  result := FSprites[AIndex];
+end;
+
+function TBGLDefaultSpriteEngine.GetCount: integer;
+begin
+  result := FSpritesCount;
+end;
+
+constructor TBGLDefaultSpriteEngine.Create;
+begin
+  FSpritesCount := 0;
+end;
+
+procedure TBGLDefaultSpriteEngine.Add(ASprite: TBGLCustomSprite);
+var
+  i: Integer;
+begin
+  if ASprite = nil then exit;
+  if not (ASprite is TBGLDefaultSprite) then
+    raise exception.Create('Invalid class');
+  for i := 0 to Count-1 do
+    if FSprites[i] = ASprite then exit;
+  if Count = length(FSprites) then
+    setlength(FSprites, length(FSprites)*2 + 1);
+  FSprites[Count] := TBGLDefaultSprite(ASprite);
+  Inc(FSpritesCount);
+end;
+
+procedure TBGLDefaultSpriteEngine.Remove(ASprite: TBGLCustomSprite);
+var
+  i: Integer;
+begin
+  if ASprite = FSpriteRemoved then exit;
+  for i := 0 to Count-1 do
+    if FSprites[i] = ASprite then
+    begin
+      Delete(i);
+      exit;
+    end;
+end;
+
+procedure TBGLDefaultSpriteEngine.OnDraw;
+var i: integer;
+begin
+  for i := 0 to Count-1 do
+    FSprites[i].OnDraw;
+end;
+
+procedure TBGLDefaultSpriteEngine.OnTimer;
+var i,j,k: integer;
+    temp: TBGLDefaultSprite;
+begin
+  for i := 0 to Count-1 do
+    FSprites[i].OnTimer;
+  for i := Count-1 downto 0 do
+    if FSprites[i].FQueryDestroy then
+      Delete(i);
+  for i := 1 to Count-1 do
+  begin
+    j := i;
+    while (j > 0) and (FSprites[j-1].Layer > FSprites[i].Layer) do dec(j);
+    if j <> i then
+      begin
+        temp := FSprites[i];
+        for k := i downto j+1 do
+          FSprites[k] := FSprites[k-1];
+        FSprites[j] := temp;
+      end;
+  end;
+end;
+
+procedure TBGLDefaultSpriteEngine.OnElapse(AElapsedMs: integer);
+var i,j,k: integer;
+    temp: TBGLDefaultSprite;
+begin
+  for i := 0 to Count-1 do
+    FSprites[i].OnElapse(AElapsedMs);
+  for i := Count-1 downto 0 do
+    if FSprites[i].FQueryDestroy then
+      Delete(i);
+  for i := 1 to Count-1 do
+  begin
+    j := i;
+    while (j > 0) and (FSprites[j-1].Layer > FSprites[i].Layer) do dec(j);
+    if j <> i then
+      begin
+        temp := FSprites[i];
+        for k := i downto j+1 do
+          FSprites[k] := FSprites[k-1];
+        FSprites[j] := temp;
+      end;
+  end;
+end;
+
+procedure TBGLDefaultSpriteEngine.Clear;
+var i: integer;
+begin
+  for i := 0 to Count-1 do
+  begin
+    FSpriteRemoved := FSprites[i];
+    FSpriteRemoved.Free;
+    FSpriteRemoved := nil;
+  end;
+  FSprites := nil;
+  FSpritesCount := 0;
+end;
+
+procedure TBGLDefaultSpriteEngine.Delete(AIndex: integer);
+var i: integer;
+begin
+  if (AIndex < 0) or (AIndex >= Count) then exit;
+  FSpriteRemoved := FSprites[AIndex];
+  for i := AIndex to Count-1 do
+    FSprites[i] := FSprites[i+1];
+  dec(FSpritesCount);
+  if FSpritesCount <= length(FSprites) div 2 then
+    setlength(FSprites,FSpritesCount);
+  FSpriteRemoved.Free;
+  FSpriteRemoved := nil;
+end;
+
+{ TBGLDefaultSprite }
+
+function TBGLDefaultSprite.GetHorizontalAlign: TAlignment;
+begin
+  result := FHorizontalAlign;
+end;
+
+function TBGLDefaultSprite.GetVerticalAlign: TTextLayout;
+begin
+  result := FVerticalAlign;
+end;
+
+procedure TBGLDefaultSprite.SetHorizontalAlign(AValue: TAlignment);
+begin
+  FHorizontalAlign:= AValue;
+end;
+
+procedure TBGLDefaultSprite.SetVerticalAlign(AValue: TTextLayout);
+begin
+  FVerticalAlign := AValue;
+end;
+
+function TBGLDefaultSprite.GetAlpha: Integer;
+begin
+  result := FColor.alpha;
+end;
+
+function TBGLDefaultSprite.GetAngle: Single;
+begin
+  result := FAngle;
+end;
+
+function TBGLDefaultSprite.GetColor: TBGRAPixel;
+begin
+  result := FColor;
+end;
+
+function TBGLDefaultSprite.GetDestroy: Boolean;
+begin
+  result := FQueryDestroy;
+end;
+
+function TBGLDefaultSprite.GetActualFrame: Single;
+begin
+  result := FFrame;
+end;
+
+function TBGLDefaultSprite.GetH: Single;
+begin
+  result := FSize.Y;
+end;
+
+function TBGLDefaultSprite.GetLayer: Integer;
+begin
+  result := FLayer;
+end;
+
+function TBGLDefaultSprite.GetVisible: Boolean;
+begin
+  Result:= not FHidden;
+end;
+
+function TBGLDefaultSprite.GetW: Single;
+begin
+  result := FSize.X;
+end;
+
+function TBGLDefaultSprite.GetX: Single;
+begin
+  result := FLocation.X;
+end;
+
+function TBGLDefaultSprite.GetY: Single;
+begin
+  result := FLocation.Y;
+end;
+
+procedure TBGLDefaultSprite.SetAlpha(AValue: Integer);
+begin
+  FColor.Alpha := AValue;
+end;
+
+procedure TBGLDefaultSprite.SetAngle(AValue: Single);
+begin
+  FAngle:= AValue;
+end;
+
+procedure TBGLDefaultSprite.SetColor(AValue: TBGRAPixel);
+begin
+  FColor := AValue;
+end;
+
+procedure TBGLDefaultSprite.SetDestroy(AValue: Boolean);
+begin
+  FQueryDestroy:= AValue;
+end;
+
+procedure TBGLDefaultSprite.SetActualFrame(AValue: Single);
+begin
+  FFrame:= AValue;
+end;
+
+procedure TBGLDefaultSprite.SetH(AValue: Single);
+begin
+  FSize.Y := AValue;
+end;
+
+procedure TBGLDefaultSprite.SetLayer(AValue: Integer);
+begin
+  FLayer:= AValue;
+end;
+
+procedure TBGLDefaultSprite.SetVisible(AValue: boolean);
+begin
+  FHidden := not AValue;
+end;
+
+procedure TBGLDefaultSprite.SetW(AValue: Single);
+begin
+  FSize.X := AValue;
+end;
+
+procedure TBGLDefaultSprite.SetX(AValue: Single);
+begin
+  FLocation.X := AValue;
+end;
+
+procedure TBGLDefaultSprite.SetY(AValue: Single);
+begin
+  FLocation.Y := AValue;
+end;
+
+procedure TBGLDefaultSprite.CreateHandle(ATexture: IBGLTexture; ALayer: Integer);
+begin
+  inherited CreateHandle(ATexture, ALayer);
+  FQueryDestroy := false;
+  FLayer:= ALayer;
+end;
+
+procedure TBGLDefaultSprite.QueryDestroy;
+begin
+  SetDestroy(True);
+end;
+
+{ TBGLCustomSprite }
+
+function TBGLCustomSprite.GetTexture: IBGLTexture;
+begin
+  result := FTexture;
+end;
+
+function TBGLCustomSprite.GetHandle: Pointer;
+begin
+  result := FHandle;
+end;
+
+procedure TBGLCustomSprite.SetFrame(AValue: Single);
+var loopLength: integer;
+begin
+  if (FrameLoopEnd <> 0) and (FrameLoopStart <> 0) then
+    begin
+      loopLength := FrameLoopEnd-FrameLoopStart+1;
+      if AValue >= FrameLoopEnd+0.49 then
+        begin
+          if loopLength <= 1 then
+            AValue := FrameLoopEnd+0.49
+          else
+          begin
+            DecF(AValue, Trunc((AValue-(FrameLoopStart-0.5))/loopLength)*loopLength);
+            if AValue > FrameLoopEnd+0.49 then AValue := FrameLoopStart-0.49;
+            if AValue < FrameLoopStart-0.49 then AValue := FrameLoopStart-0.49;
+          end;
+        end else
+      if AValue < FrameLoopStart-0.49 then
+        begin
+          if loopLength <= 1 then
+            AValue := FrameLoopStart-0.49
+          else
+          begin
+            IncF(AValue, Trunc((FrameLoopEnd+0.5-AValue)/loopLength)*loopLength);
+            if AValue > FrameLoopEnd+0.49 then AValue := FrameLoopEnd+0.49;
+            if AValue < FrameLoopStart-0.49 then AValue := FrameLoopEnd+0.49;
+          end;
+        end;
+    end;
+  SetActualFrame(AValue);
+end;
+
+procedure TBGLCustomSprite.SetFrameLoopEnd(AValue: integer);
+begin
+  FFrameLoopEnd := AValue;
+  if FFrameLoopEnd < FFrameLoopStart then
+    FFrameLoopStart := FFrameLoopEnd;
+end;
+
+procedure TBGLCustomSprite.SetFrameLoopStart(AValue: integer);
+begin
+  FFrameLoopStart := AValue;
+  if FFrameLoopStart > FFrameLoopEnd then
+    FFrameLoopEnd := FFrameLoopStart;
+end;
+
+function TBGLCustomSprite.GetFrame: Single;
+begin
+  result := GetActualFrame;
+end;
+
+function TBGLCustomSprite.GetLocation: TPointF;
+begin
+  result := PointF(X,Y);
+end;
+
+function TBGLCustomSprite.GetVisible: Boolean;
+begin
+  result := true;
+end;
+
+procedure TBGLCustomSprite.SetLocation(AValue: TPointF);
+begin
+  X := AValue.X;
+  Y := AValue.Y;
+end;
+
+procedure TBGLCustomSprite.SetVisible(AValue: boolean);
+begin
+  raise ENotImplemented.Create('Not implemented in base class');
+end;
+
+procedure TBGLCustomSprite.CreateHandle(ATexture: IBGLTexture; ALayer: Integer);
+begin
+  FHandle := nil;
+end;
+
+procedure TBGLCustomSprite.OnInit;
+begin
+  //nothing
+end;
+
+constructor TBGLCustomSprite.Create(ATexture: IBGLTexture; ALayer: integer);
+begin
+  CreateHandle(ATexture,ALayer);
+  FTexture := ATexture;
+  Layer := ALayer;
+  if ATexture = nil then
+    begin
+      W := 0;
+      H := 0;
+    end else
+    begin
+      W := ATexture.FrameWidth;
+      H := ATexture.FrameHeight;
+    end;
+  HorizontalAlign := taLeftJustify;
+  VerticalAlign:= tlTop;
+  Color := BGRAWhite;
+  FrameLoopStart := 1;
+  FrameLoopEnd := 0;
+  OnInit;
+  BGLSpriteEngine.Add(self);
+end;
+
+destructor TBGLCustomSprite.Destroy;
+begin
+  if Assigned(BGLSpriteEngine) then
+    BGLSpriteEngine.Remove(self);
+  inherited Destroy;
+end;
+
+procedure TBGLCustomSprite.OnDraw;
+var NumFrame: integer;
+begin
+  if Visible and (Texture <> nil) then
+    begin
+      NumFrame := Trunc(Frame+0.5);
+      if Angle <> 0 then
+        Texture.Frame[NumFrame].StretchDrawAngle(X,Y,W,H,Angle,HorizontalAlign,VerticalAlign, Color)
+      else
+        Texture.Frame[NumFrame].StretchDraw(X,Y,W,H,HorizontalAlign,VerticalAlign, Color)
+    end;
+end;
+
+procedure TBGLCustomSprite.OnElapse(AElapsedMs: integer);
+begin
+  //override if you want to handle time as continuous flow. It is recommended to use floating point positions in this case.
+end;
+
+procedure TBGLCustomSprite.OnTimer;
+begin
+  //override if you want to handle time as discrete frames with fixed time interval
+end;
+
+end.
+

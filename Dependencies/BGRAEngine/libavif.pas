@@ -1316,5 +1316,171 @@ function LibAvifLoaded : boolean;
 Function LibAvifLoad(const libfilename:string = ''): boolean; // load the lib
 Procedure LibAvifUnload; // unload and frees the lib from memory : do not forget to call it before close application.
 
-Implementation
-End.
+implementation
+{$IFDEF LOAD_DYNAMICALLY}
+
+uses
+    SysUtils, Classes, DynLibs{$ifdef linux}, linuxlib{$endif}{$ifdef darwin}, darwinlib{$endif};
+var
+  LibAvifHandle: TLibHandle = dynlibs.NilHandle; // this will hold our handle for the lib; it functions nicely as a mutli-lib prevention unit as well...
+  LibAvifRefCount : LongWord = 0;  // Reference counter
+
+
+function LibAvifLoaded: boolean;
+begin
+  Result := (LibAvifHandle <> dynlibs.NilHandle);
+end;
+
+procedure LibAvifRetreiveVersion;
+var version: TStringList;
+begin
+  version := TStringList.Create;
+  version.Delimiter:= '.';
+  version.DelimitedText:= string(avifVersion());
+  AVIF_VERSION_MAJOR := StrToInt(version[0]);
+  if version.Count >= 2 then AVIF_VERSION_MINOR := StrToInt(version[1]) else
+    AVIF_VERSION_MINOR := 0;
+  if version.Count >= 3 then AVIF_VERSION_PATCH := StrToInt(version[2]) else
+    AVIF_VERSION_PATCH := 0;
+  AVIF_VERSION := AVIF_VERSION_MAJOR * 1000000 + AVIF_VERSION_MINOR * 10000 + AVIF_VERSION_PATCH * 100;
+  version.Free;
+end;
+
+Function LibAvifLoad (const libfilename:string) :boolean;
+var
+  thelib: string;
+begin
+  Result := False;
+  if LibAvifHandle<>0 then
+  begin
+   Inc(LibAvifRefCount);
+   result:=true {is it already there ?}
+  end else
+  begin {go & load the library}
+    if libfilename <> '' then
+    begin
+      thelib := libfilename;
+      if Pos(DirectorySeparator, thelib)=0 then
+        thelib := ExtractFilePath(ParamStr(0)) + DirectorySeparator + thelib;
+      LibAvifHandle := DynLibs.SafeLoadLibrary(libfilename); // obtain the handle we want
+    end else
+    begin
+      {$ifdef linux}thelib := FindLinuxLibrary(LibAvifFilename);{$else}
+      {$ifdef darwin}thelib := FindDarwinLibrary(LibAvifFilename);{$else}
+      thelib := ExtractFilePath(ParamStr(0)) + DirectorySeparator + LibAvifFilename;
+      {$endif}{$endif}
+      if thelib <> '' then
+        LibAvifHandle := DynLibs.SafeLoadLibrary(thelib); // obtain the handle we want
+    end;
+    if LibAvifHandle <> DynLibs.NilHandle then
+    begin {now we tie the functions to the VARs from above}
+      Pointer(avifAlloc):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifAlloc'));
+      Pointer(avifCleanApertureBoxConvertCropRect):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifCleanApertureBoxConvertCropRect'));
+      Pointer(avifCodecChoiceFromName):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifCodecChoiceFromName'));
+      Pointer(avifCodecName):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifCodecName'));
+      Pointer(avifCodecVersions):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifCodecVersions'));
+      Pointer(avifColorPrimariesFind):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifColorPrimariesFind'));
+      Pointer(avifColorPrimariesGetValues):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifColorPrimariesGetValues'));
+      Pointer(avifCropRectConvertCleanApertureBox):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifCropRectConvertCleanApertureBox'));
+      Pointer(avifDecoderCreate):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderCreate'));
+      Pointer(avifDecoderDestroy):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderDestroy'));
+      Pointer(avifDecoderIsKeyframe):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderIsKeyframe'));
+      Pointer(avifDecoderNearestKeyframe):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderNearestKeyframe'));
+      Pointer(avifDecoderNextImage):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderNextImage'));
+      Pointer(avifDecoderNthImage):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderNthImage'));
+      Pointer(avifDecoderNthImageMaxExtent):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderNthImageMaxExtent'));
+      Pointer(avifDecoderNthImageTiming):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderNthImageTiming'));
+      Pointer(avifDecoderParse):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderParse'));
+      Pointer(avifDecoderRead):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderRead'));
+      Pointer(avifDecoderReadFile):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderReadFile'));
+      Pointer(avifDecoderReadMemory):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderReadMemory'));
+      Pointer(avifDecoderReset):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderReset'));
+      Pointer(avifDecoderSetIO):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderSetIO'));
+      Pointer(avifDecoderSetIOFile):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderSetIOFile'));
+      Pointer(avifDecoderSetIOMemory):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderSetIOMemory'));
+      Pointer(avifDecoderSetSource):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDecoderSetSource'));
+      Pointer(avifDiagnosticsClearError):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifDiagnosticsClearError'));
+      Pointer(avifEncoderAddImage):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifEncoderAddImage'));
+      Pointer(avifEncoderAddImageGrid):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifEncoderAddImageGrid'));
+      Pointer(avifEncoderCreate):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifEncoderCreate'));
+      Pointer(avifEncoderDestroy):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifEncoderDestroy'));
+      Pointer(avifEncoderFinish):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifEncoderFinish'));
+      Pointer(avifEncoderSetCodecSpecificOption):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifEncoderSetCodecSpecificOption'));
+      Pointer(avifEncoderWrite):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifEncoderWrite'));
+      Pointer(avifFree):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifFree'));
+      Pointer(avifFullToLimitedUV):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifFullToLimitedUV'));
+      Pointer(avifFullToLimitedY):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifFullToLimitedY'));
+      Pointer(avifGetPixelFormatInfo):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifGetPixelFormatInfo'));
+      Pointer(avifImageAllocatePlanes):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageAllocatePlanes'));
+      Pointer(avifImageCopy):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageCopy'));
+      Pointer(avifImageCreate):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageCreate'));
+      Pointer(avifImageCreateEmpty):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageCreateEmpty'));
+      Pointer(avifImageDestroy):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageDestroy'));
+      Pointer(avifImageFreePlanes):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageFreePlanes'));
+      Pointer(avifImageRGBToYUV):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageRGBToYUV'));
+      Pointer(avifImageSetMetadataExif):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageSetMetadataExif'));
+      Pointer(avifImageSetMetadataXMP):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageSetMetadataXMP'));
+      Pointer(avifImageSetProfileICC):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageSetProfileICC'));
+      Pointer(avifImageStealPlanes):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageStealPlanes'));
+      Pointer(avifImageUsesU16):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageUsesU16'));
+      Pointer(avifImageYUVToRGB):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifImageYUVToRGB'));
+      Pointer(avifIOCreateFileReader):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifIOCreateFileReader'));
+      Pointer(avifIOCreateMemoryReader):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifIOCreateMemoryReader'));
+      Pointer(avifIODestroy):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifIODestroy'));
+      Pointer(avifLibYUVVersion):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifLibYUVVersion'));
+      Pointer(avifLimitedToFullUV):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifLimitedToFullUV'));
+      Pointer(avifLimitedToFullY):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifLimitedToFullY'));
+      Pointer(avifPeekCompatibleFileType):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifPeekCompatibleFileType'));
+      Pointer(avifPixelFormatToString):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifPixelFormatToString'));
+      Pointer(avifProgressiveStateToString):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifProgressiveStateToString'));
+      Pointer(avifResultToString):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifResultToString'));
+      Pointer(avifRGBFormatChannelCount):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRGBFormatChannelCount'));
+      Pointer(avifRGBFormatHasAlpha):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRGBFormatHasAlpha'));
+      Pointer(avifRGBImageAllocatePixels):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRGBImageAllocatePixels'));
+      Pointer(avifRGBImageFreePixels):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRGBImageFreePixels'));
+      Pointer(avifRGBImagePixelSize):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRGBImagePixelSize'));
+      Pointer(avifRGBImagePremultiplyAlpha):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRGBImagePremultiplyAlpha'));
+      Pointer(avifRGBImageSetDefaults):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRGBImageSetDefaults'));
+      Pointer(avifRGBImageUnpremultiplyAlpha):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRGBImageUnpremultiplyAlpha'));
+      Pointer(avifRWDataFree):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRWDataFree'));
+      Pointer(avifRWDataRealloc):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRWDataRealloc'));
+      Pointer(avifRWDataSet):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifRWDataSet'));
+      Pointer(avifVersion):=DynLibs.GetProcedureAddress(LibAvifHandle,PAnsiChar('avifVersion'));
+      LibAvifRetreiveVersion;
+    end;
+    Result := LibAvifLoaded;
+    LibAvifRefCount:=1;
+  end;
+end;
+
+Procedure LibAvifUnload;
+begin
+  // < Reference counting
+  if LibAvifRefCount > 0 then
+    dec(LibAvifRefCount);
+  if LibAvifRefCount > 0 then
+    exit;
+  // >
+  if LibAvifLoaded then
+  begin
+    DynLibs.UnloadLibrary(LibAvifHandle);
+    LibAvifHandle:=DynLibs.NilHandle;
+  end;
+end;
+{$ELSE}
+function LibAvifLoaded: boolean;
+begin
+  result:=true;
+end;
+function LibAvifLoad (const libfilename:string) :boolean;
+begin
+  //do nothing
+end;
+
+procedure LibAvifUnload;
+begin
+  //do nothing
+end;
+{$ENDIF}
+
+end.

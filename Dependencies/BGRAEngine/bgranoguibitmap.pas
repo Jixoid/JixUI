@@ -46,5 +46,124 @@ type
     property Canvas: TBGRACanvas read GetPseudoCanvas;
   end;
 
-Implementation
-End.
+implementation
+
+{ TBGRANoGUIBitmap }
+
+function TBGRANoGUIBitmap.GetPseudoCanvas: TBGRACanvas;
+begin
+  if FPseudoCanvas = nil then
+  begin
+    FPseudoCanvas := TBGRACanvas.Create(self);
+    FPseudoCanvas.AntialiasingMode := amOff;
+  end;
+  result := FPseudoCanvas;
+end;
+
+procedure TBGRANoGUIBitmap.RebuildBitmap;
+begin
+  //nothing
+end;
+
+function TBGRANoGUIBitmap.CreateDefaultFontRenderer: TBGRACustomFontRenderer;
+begin
+  result := TBGRAFreeTypeFontRenderer.Create;
+end;
+
+function TBGRANoGUIBitmap.LoadFromRawImage(ARawImage: TRawImage;
+  DefaultOpacity: byte; AlwaysReplaceAlpha: boolean;
+  RaiseErrorOnInvalidPixelFormat: boolean): boolean;
+begin
+  NotAvailable;
+  result := false;
+end;
+
+procedure TBGRANoGUIBitmap.Init;
+begin
+  inherited Init;
+  FontAntialias:= true;
+end;
+
+procedure TBGRANoGUIBitmap.FreeBitmap;
+begin
+  //nothing
+end;
+
+procedure TBGRANoGUIBitmap.NotAvailable;
+begin
+  raise exception.Create('Function not available without GUI');
+end;
+
+destructor TBGRANoGUIBitmap.Destroy;
+begin
+  FreeAndNil(FPseudoCanvas);
+  inherited Destroy;
+end;
+
+procedure TBGRANoGUIBitmap.AssignToBitmap(ADestination: TBitmap);
+begin
+  ADestination.RawImage.Assign(self);
+end;
+
+class procedure TBGRANoGUIBitmap.AddFreeTypeFontFolder(ADirectory: string; AUTF8: boolean);
+begin
+  if AUTF8 then ADirectory:= Utf8ToAnsi(ADirectory);
+  EasyLazFreeType.FontCollection.AddFolder(ADirectory);
+end;
+
+class procedure TBGRANoGUIBitmap.AddFreeTypeFontFile(AFilename: string; AUTF8: boolean);
+begin
+  if AUTF8 then AFilename:= Utf8ToAnsi(AFilename);
+  EasyLazFreeType.FontCollection.AddFile(AFilename);
+end;
+
+procedure TBGRANoGUIBitmap.Draw(ACanvas: TCanvas; x, y: integer; Opaque: boolean);
+begin
+  ACanvas.GUICanvas.Draw(x,y,self);
+end;
+
+procedure TBGRANoGUIBitmap.Draw(ACanvas: TCanvas; Rect: TRect; Opaque: boolean);
+begin
+  ACanvas.GUICanvas.StretchDraw(Rect.Left,Rect.Top,Rect.Right-Rect.Left,Rect.Bottom-Rect.Top,self);
+end;
+
+procedure TBGRANoGUIBitmap.GetImageFromCanvas(CanvasSource: TCanvas; x,
+  y: integer);
+begin
+  NotAvailable;
+end;
+
+procedure TBGRANoGUIBitmap.DataDrawTransparent(ACanvas: TCanvas; Rect: TRect;
+  AData: Pointer; ALineOrder: TRawImageLineOrder; AWidth, AHeight: integer);
+begin
+  NotAvailable;
+end;
+
+procedure TBGRANoGUIBitmap.DataDrawOpaque(ACanvas: TCanvas; Rect: TRect;
+  AData: Pointer; ALineOrder: TRawImageLineOrder; AWidth, AHeight: integer);
+begin
+  NotAvailable;
+end;
+
+procedure TBGRANoGUIBitmap.TakeScreenshot(ARect: TRect);
+begin
+  NotAvailable;
+end;
+
+procedure TBGRANoGUIBitmap.TakeScreenshotOfPrimaryMonitor;
+begin
+  NotAvailable;
+end;
+
+procedure TBGRANoGUIBitmap.LoadFromDevice(DC: HDC);
+begin
+  NotAvailable;
+end;
+
+procedure TBGRANoGUIBitmap.LoadFromDevice(DC: HDC; ARect: TRect);
+begin
+  NotAvailable;
+end;
+
+end.
+

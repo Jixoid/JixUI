@@ -45,5 +45,41 @@ type
    property LightPosition3D: TPoint3D read FLightPosition3D write FLightPosition3D;
  end;
 
-Implementation
-End.
+implementation
+
+{ TCustomPhongShading }
+
+function TCustomPhongShading.GetLightPositionF: TPointF;
+begin
+  result := PointF(FLightPosition3D.X,FLightPosition3D.Y);
+end;
+
+procedure TCustomPhongShading.SetLightPositionF(AValue: TPointF);
+begin
+  FLightPosition3D.X := AValue.X;
+  FLightPosition3D.Y := AValue.Y;
+end;
+
+function TCustomPhongShading.GetLightPosition: TPoint;
+begin
+  result := Point(round(FLightPosition3D.X),round(FLightPosition3D.Y));
+end;
+
+procedure TCustomPhongShading.SetLightPosition(AValue: TPoint);
+begin
+  FLightPosition3D.X := AValue.X;
+  FLightPosition3D.Y := AValue.Y;
+end;
+
+function TCustomPhongShading.GetLightPositionZ: integer;
+begin
+  result := round(FLightPosition3D.Z);
+end;
+
+procedure TCustomPhongShading.SetLightPositionZ(AValue: integer);
+begin
+  FLightPosition3D.Z := AValue;
+end;
+
+end.
+
