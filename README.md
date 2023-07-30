@@ -1,4 +1,7 @@
 # JixUI
+v4.9.7.0
+
+Supporting
 v4.9.6.1
 
 Türkçe =====>
